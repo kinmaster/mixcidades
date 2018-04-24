@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Category Classifieds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @category_classifieds.each do |category_classified| %>
+      <tr>
+        <td><%= category_classified.user %></td>
+        <td><%= category_classified.title %></td>
+        <td><%= link_to 'Show', category_classified %></td>
+        <td><%= link_to 'Edit', edit_category_classified_path(category_classified) %></td>
+        <td><%= link_to 'Destroy', category_classified, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Category Classified', new_category_classified_path %>

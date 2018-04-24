@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @classifield.user %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @classifield.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @classifield.description %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @classifield.value %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @classifield.date %>
+</p>
+
+<p>
+  <strong>Sale:</strong>
+  <%= @classifield.sale %>
+</p>
+
+<%= link_to 'Edit', edit_classifield_path(@classifield) %> |
+<%= link_to 'Back', classifields_path %>

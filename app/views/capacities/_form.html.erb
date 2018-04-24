@@ -1,0 +1,27 @@
+<%= form_with(model: capacity, local: true) do |form| %>
+  <% if capacity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(capacity.errors.count, "error") %> prohibited this capacity from being saved:</h2>
+
+      <ul>
+      <% capacity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :capacity_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :capacity_title %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

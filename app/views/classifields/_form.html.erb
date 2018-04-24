@@ -1,0 +1,47 @@
+<%= form_with(model: classifield, local: true) do |form| %>
+  <% if classifield.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(classifield.errors.count, "error") %> prohibited this classifield from being saved:</h2>
+
+      <ul>
+      <% classifield.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :classifield_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :classifield_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :classifield_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value, id: :classifield_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, id: :classifield_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sale %>
+    <%= form.check_box :sale, id: :classifield_sale %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

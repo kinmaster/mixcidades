@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @capacity.user %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @capacity.title %>
+</p>
+
+<%= link_to 'Edit', edit_capacity_path(@capacity) %> |
+<%= link_to 'Back', capacities_path %>

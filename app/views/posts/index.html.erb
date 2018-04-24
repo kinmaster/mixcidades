@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+
+
+    <div class="container">
+    <h3 class="header">Notícias</h3>
+    <div class="divider"></div>
+
+    <% @posts.each do |post| %>
+    
+
+  <div class="col s12 m7">    
+    <div class="card horizontal small">
+      <div class="card-image">
+        <img src="https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2018/04/20/100829132gettyimages-615269202.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+        <h5 class="header"><%= post.title %></h5>
+          <p><%= post.sub %></p>
+        </div>
+        <div class="card-action">
+          <%= link_to 'Mais + ', post %>
+        </div>
+      </div>
+    </div>
+  </div>
+  </br>
+  <% end %>
+</div>
+      
+       
+    
+  
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>

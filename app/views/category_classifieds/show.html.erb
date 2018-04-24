@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @category_classified.user %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @category_classified.title %>
+</p>
+
+<%= link_to 'Edit', edit_category_classified_path(@category_classified) %> |
+<%= link_to 'Back', category_classifieds_path %>

@@ -1,0 +1,2 @@
+module CategoryClassifiedsHelper
+end
