@@ -17,3 +17,7 @@
 //= require ckeditor/init
 //= require_tree .
 
+$(document).ready(function(){
+    //$('.sidenav-trigger').sidenav();
+    $('.slider').slider();
+  });

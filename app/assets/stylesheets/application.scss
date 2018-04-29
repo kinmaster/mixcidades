@@ -16,8 +16,9 @@
  @import "materialize";
  @import "material_icons";
 
+
  .home{
-     padding: 0px 35px;
+     margin: 0px 55px;
  }
 #conteudo p{
     font-size: 1.2rem;
@@ -28,5 +29,40 @@
     width: 100%;
 }
 .topo{
-    height: 100px;
+    height: 300px;
 }
+header, main, footer {
+    padding-left: 300px;
+  }
+
+  @media only screen and (max-width : 992px) {
+    header, main, footer {
+      padding-left: 0;
+    }
+  }
+  .CoverImage {
+    
+    background-image: url("https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2018/04/20/100822747gettyimages-909145274.jpg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    max-height: 300px;
+    max-width: 1000px;
+    margin-top: 8px;
+    font-size: 24px;
+    font-weight: 300;
+    
+    
+    
+  }
+  .texto-link{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 25px 20px;
+    color: #fff;
+    line-height: 20px;
+  }
+      
+      

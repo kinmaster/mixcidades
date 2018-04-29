@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118359357-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-118359357-1');
+</script>
+
     <title>Mix Cidades - O Portal onde sua cidade acontece.</title>
     <%= csrf_meta_tags %>
 
@@ -10,30 +20,50 @@
 
   <body>
   <header>
-  
-  <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
-</ul>
-<nav>
-  <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">Logo</a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <!-- Dropdown Trigger -->
-      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-    </ul>
-  </div>
-</nav>
-  
+      <nav class="top-nav blue darken-3">
+        <div class="container">
+          <div class="nav-wrapper">  
+          <%= link_to t('.Mix Cidades'), root_path, class: ['brand-logo center page-title'] %>         
+          
+            <form>
+              <div class="input-field right">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="large material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </div>
+        </div>
         
-  </header>
-  <div class="home">
+
+        <a href="#" id="" data-target="slide-out" class="sidenav-trigger button-collapse show-on-large"><%= material_icon.menu %></a>
+      </nav>
+
+      <ul id="slide-out" class="side-nav fixed">
+          <li><div class="user-view">
+            <div class="">
+              <%= image_tag 'logo.svg' %>
+            </div>
+          </div></li>
+          
+          
+          <li><div class="divider"></div></li>
+          <li><a class="subheader">Categorias</a></li>
+          <li><%= link_to 'Notícias', posts_path , class:"waves-effect" %></li>
+          <li><%= link_to 'Esporte', posts_path , class:"waves-effect" %></li>
+          <li><%= link_to 'Classificado', posts_path , class:"waves-effect" %></li>
+          <li><%= link_to 'Emprego', posts_path , class:"waves-effect" %></li>
+          <li><%= link_to 'Receitas', posts_path , class:"waves-effect" %></li>
+          <li><%= link_to 'Noticias', posts_path , class:"waves-effect" %></li>
+          <li><%= link_to 'Noticias', posts_path , class:"waves-effect" %></li>
+          <li><%= link_to 'Noticias', posts_path , class:"waves-effect" %></li>
+        </ul>
+
+    </header>
+
+  <main class="home">
     <%= yield %>
-  </div>
+  </main>
 
         <footer class="page-footer grey darken-3">
           <div class="container">
