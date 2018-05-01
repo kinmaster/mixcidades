@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :sector_id %>
-    <%= form.text_field :sector_id, id: :job_sector_id %>
+     <%= form.select :sector_id, Sector.all.collect { |p| [p.title, p.id] }, include_blank: true, class: "" %>
   </div>
 
   <div class="field">
     <%= form.label :capacity_id %>
-    <%= form.text_field :capacity_id, id: :job_capacity_id %>
+    <%= form.select :capacity_id, Capacity.all.collect { |p| [p.title, p.id] }, include_blank: true, class: "" %>
   </div>
 
   <div class="field">

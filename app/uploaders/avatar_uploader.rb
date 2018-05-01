@@ -3,8 +3,17 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
+  CarrierWave.configure do |config|
+    config.dropbox_app_key = ENV["iycjhfsf24g1lrf"]
+    config.dropbox_app_secret = ENV["xw7ircfdjlci89i"]
+    config.dropbox_access_token = ENV["EbIuaUV8MrAAAAAAAAAAEZHwlyB39LuAZIzyDotiRivcXY9QFRCeGrCv5hHYH9V3"]
+    config.dropbox_access_token_secret = ENV["EbIuaUV8MrAAAAAAAAAAEZHwlyB39LuAZIzyDotiRivcXY9QFRCeGrCv5hHYH9V3"]
+    config.dropbox_user_id = ENV["USER_ID"]
+    config.dropbox_access_type = "dropbox"
+  end
+
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  storage :dropbox
   # storage :fog
 
   # Override the directory where uploaded files will be stored.

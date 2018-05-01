@@ -1,42 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Jobs</h1>
+<h3 class="header">Empregos</h3>
+<div class="row">
+<% @jobs.each do |job| %>
+  <div class="col s12 m3">    
+    <div class="card small">
+      <div class="card-stacked">
+     
+        <div class="card-content">
+         <h6 class=""><i class="material-icons tiny ">access_time</i> <%= time_ago_in_words(job.created_at) %></h6>
+        <h5 class="header"><%= job.title %></h5>
+          <p><%= job.description[0..95]%> ...</p>
+          <p>Salario: <%= job.salary %></p>
+        </div>
+        <div class="card-action">
+          <%= link_to 'Ver Vaga', job %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Sector</th>
-      <th>Capacity</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th>Salary</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.user %></td>
-        <td><%= job.sector %></td>
-        <td><%= job.capacity %></td>
-        <td><%= job.title %></td>
-        <td><%= job.description %></td>
-        <td><%= job.phone %></td>
-        <td><%= job.email %></td>
-        <td><%= job.salary %></td>
-        <td><%= job.date %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 

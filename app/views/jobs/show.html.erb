@@ -1,49 +1,135 @@
 <p id="notice"><%= notice %></p>
+<div class="section">
 
-<p>
-  <strong>User:</strong>
-  <%= @job.user %>
-</p>
+    <div class="row">
+      <div class="col s12 m8 ">
+        <h6 class="flow-text">
+          <i class="material-icons ">access_time</i> <%= time_ago_in_words(@job.created_at) %>
+          - <%= @job.sector.title%>
+        </h6>
+        <h3 class="header"><%= @job.title %></h3>
+        <h5 class="header">Salario: <%= @job.salary %></h5>
+        <h6 class="header">Telefone: <%= @job.phone %></h6>
+        <h6 class="header">Email: <%= @job.email %></h6>
+        <div id="conteudo"><%= @job.description %>
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+            style="display:block; text-align:center;"
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-ad-client="ca-pub-9835055996289480"
+            data-ad-slot="2961374021">
+            </ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+        <%= link_to 'Back', jobs_path %>
+        <%= link_to 'Edit', edit_job_path(@job) %> |
+        <%= link_to 'Back', jobs_path %>
+        <div class="row">
+        <h4 class="header">Veja Tambem</h4>
+        <% @vagas.each do |post| %>
+              
+              <div class="col s12 m4">    
+                <div class="card small">
+                  <div class="card-image">
+                    <img src="http://localhost:3000/uploads/ckeditor/pictures/3/content_dirceu2.jpg">
+                    <span class="card-title"></span>
+                  </div>
+                  <div class="card-content">
+                    <p><%= post.title%></p>          
+                  </div>        
+                </div>      
+              </div>
+        <% end %>
+        </div>
 
-<p>
-  <strong>Sector:</strong>
-  <%= @job.sector %>
-</p>
+      </div>
+      <div class="col s12 m4">
+        <h3 class="header">Notícias</h3>
+        <p>lo"Embora o doenças cardíacas não fatais sejam menos prováveis em pessoas que bebem, esse benefício é prejudicado pelo aumento do risco de outras formas de doenças fatais no coração", explica.
 
-<p>
-  <strong>Capacity:</strong>
-  <%= @job.capacity %>
-</p>
+          Os limites de consumo de álcool recomendados em Itália, Portugal e Espanha são quase 50% maiores que os do Reino Unido - nos Estados Unidos, esse índice é quase o dobro no caso de homens. O Brasil não tem recomendação oficial sobre os limites do consumo de álcool.
 
-<p>
-  <strong>Title:</strong>
-  <%= @job.title %>
-</p>
+          Mas Victoria Taylor, nutricionista da Fundação Britânica do Coração, instituição que financiou parte do estudo, diz que esse tipo de recomendação deve ser encarado como um limite e não como um alvo a se alcançar. "O ideal seria beber bem menos que isso", afirma.
 
-<p>
-  <strong>Description:</strong>
-  <%= @job.description %>
-</p>
+          Angela Wood, da Universidade de Cambridge, vai na mesma linha. "A mensagem da pesquisa é a seguinte: se você já bebe álcool, saiba que beber menos pode ajudá-lo a viver mais e diminuir os riscos de desenvolver várias doenças graves".rem
+          lo"Embora o doenças cardíacas não fatais sejam menos prováveis em pessoas que bebem, esse benefício é prejudicado pelo aumento do risco de outras formas de doenças fatais no coração", explica.
 
-<p>
-  <strong>Phone:</strong>
-  <%= @job.phone %>
-</p>
+          Os limites de consumo de álcool recomendados em Itália, Portugal e Espanha são quase 50% maiores que os do Reino Unido - nos Estados Unidos, esse índice é quase o dobro no caso de homens. O Brasil não tem recomendação oficial sobre os limites do consumo de álcool.
 
-<p>
-  <strong>Email:</strong>
-  <%= @job.email %>
-</p>
+          Mas Victoria Taylor, nutricionista da Fundação Britânica do Coração, instituição que financiou parte do estudo, diz que esse tipo de recomendação deve ser encarado como um limite e não como um alvo a se alcançar. "O ideal seria beber bem menos que isso", afirma.
 
-<p>
-  <strong>Salary:</strong>
-  <%= @job.salary %>
-</p>
+          Angela Wood, da Universidade de Cambridge, vai na mesma linha. "A mensagem da pesquisa é a seguinte: se você já bebe álcool, saiba que beber menos pode ajudá-lo a viver mais e diminuir os riscos de desenvolver várias doenças graves".rem
+          lo"Embora o doenças cardíacas não fatais sejam menos prováveis em pessoas que bebem, esse benefício é prejudicado pelo aumento do risco de outras formas de doenças fatais no coração", explica.
 
-<p>
-  <strong>Date:</strong>
-  <%= @job.date %>
-</p>
+          Os limites de consumo de álcool recomendados em Itália, Portugal e Espanha são quase 50% maiores que os do Reino Unido - nos Estados Unidos, esse índice é quase o dobro no caso de homens. O Brasil não tem recomendação oficial sobre os limites do consumo de álcool.
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+          Mas Victoria Taylor, nutricionista da Fundação Britânica do Coração, instituição que financiou parte do estudo, diz que esse tipo de recomendação deve ser encarado como um limite e não como um alvo a se alcançar. "O ideal seria beber bem menos que isso", afirma.
+
+          Angela Wood, da Universidade de Cambridge, vai na mesma linha. "A mensagem da pesquisa é a seguinte: se você já bebe álcool, saiba que beber menos pode ajudá-lo a viver mais e diminuir os riscos de desenvolver várias doenças graves".rem
+          lo"Embora o doenças cardíacas não fatais sejam menos prováveis em pessoas que bebem, esse benefício é prejudicado pelo aumento do risco de outras formas de doenças fatais no coração", explica.
+
+          Os limites de consumo de álcool recomendados em Itália, Portugal e Espanha são quase 50% maiores que os do Reino Unido - nos Estados Unidos, esse índice é quase o dobro no caso de homens. O Brasil não tem recomendação oficial sobre os limites do consumo de álcool.
+
+          Mas Victoria Taylor, nutricionista da Fundação Britânica do Coração, instituição que financiou parte do estudo, diz que esse tipo de recomendação deve ser encarado como um limite e não como um alvo a se alcançar. "O ideal seria beber bem menos que isso", afirma.
+
+          Angela Wood, da Universidade de Cambridge, vai na mesma linha. "A mensagem da pesquisa é a seguinte: se você já bebe álcool, saiba que beber menos pode ajudá-lo a viver mais e diminuir os riscos de desenvolver várias doenças graves".rem
+          lo"Embora o doenças cardíacas não fatais sejam menos prováveis em pessoas que bebem, esse benefício é prejudicado pelo aumento do risco de outras formas de doenças fatais no coração", explica.
+
+          Os limites de consumo de álcool recomendados em Itália, Portugal e Espanha são quase 50% maiores que os do Reino Unido - nos Estados Unidos, esse índice é quase o dobro no caso de homens. O Brasil não tem recomendação oficial sobre os limites do consumo de álcool.
+
+          Mas Victoria Taylor, nutricionista da Fundação Britânica do Coração, instituição que financiou parte do estudo, diz que esse tipo de recomendação deve ser encarado como um limite e não como um alvo a se alcançar. "O ideal seria beber bem menos que isso", afirma.
+
+          Angela Wood, da Universidade de Cambridge, vai na mesma linha. "A mensagem da pesquisa é a seguinte: se você já bebe álcool, saiba que beber menos pode ajudá-lo a viver mais e diminuir os riscos de desenvolver várias doenças graves".rem
+          lo"Embora o doenças cardíacas não fatais sejam menos prováveis em pessoas que bebem, esse benefício é prejudicado pelo aumento do risco de outras formas de doenças fatais no coração", explica.
+
+          Os limites de consumo de álcool recomendados em Itália, Portugal e Espanha são quase 50% maiores que os do Reino Unido - nos Estados Unidos, esse índice é quase o dobro no caso de homens. O Brasil não tem recomendação oficial sobre os limites do consumo de álcool.
+
+          Mas Victoria Taylor, nutricionista da Fundação Britânica do Coração, instituição que financiou parte do estudo, diz que esse tipo de recomendação deve ser encarado como um limite e não como um alvo a se alcançar. "O ideal seria beber bem menos que isso", afirma.
+
+          Angela Wood, da Universidade de Cambridge, vai na mesma linha. "A mensagem da pesquisa é a seguinte: se você já bebe álcool, saiba que beber menos pode ajudá-lo a viver mais e diminuir os riscos de desenvolver várias doenças graves".rem
+          lo"Embora o doenças cardíacas não fatais sejam menos prováveis em pessoas que bebem, esse benefício é prejudicado pelo aumento do risco de outras formas de doenças fatais no coração", explica.
+
+          Os limites de consumo de álcool recomendados em Itália, Portugal e Espanha são quase 50% maiores que os do Reino Unido - nos Estados Unidos, esse índice é quase o dobro no caso de homens. O Brasil não tem recomendação oficial sobre os limites do consumo de álcool.
+
+          Mas Victoria Taylor, nutricionista da Fundação Britânica do Coração, instituição que financiou parte do estudo, diz que esse tipo de recomendação deve ser encarado como um limite e não como um alvo a se alcançar. "O ideal seria beber bem menos que isso", afirma.
+
+          Angela Wood, da Universidade de Cambridge, vai na mesma linha. "A mensagem da pesquisa é a seguinte: se você já bebe álcool, saiba que beber menos pode ajudá-lo a viver mais e diminuir os riscos de desenvolver várias doenças graves".rem
+          lo"Embora o doenças cardíacas não fatais sejam menos prováveis em pessoas que bebem, esse benefício é prejudicado pelo aumento do risco de outras formas de doenças fatais no coração", explica.
+
+          Os limites de consumo de álcool recomendados em Itália, Portugal e Espanha são quase 50% maiores que os do Reino Unido - nos Estados Unidos, esse índice é quase o dobro no caso de homens. O Brasil não tem recomendação oficial sobre os limites do consumo de álcool.
+
+          Mas Victoria Taylor, nutricionista da Fundação Britânica do Coração, instituição que financiou parte do estudo, diz que esse tipo de recomendação deve ser encarado como um limite e não como um alvo a se alcançar. "O ideal seria beber bem menos que isso", afirma.
+
+          Angela Wood, da Universidade de Cambridge, vai na mesma linha. "A mensagem da pesquisa é a seguinte: se você já bebe álcool, saiba que beber menos pode ajudá-lo a viver mais e diminuir os riscos de desenvolver várias doenças graves".rem
+          lo"Embora o doenças cardíacas não fatais sejam menos prováveis em pessoas que bebem, esse benefício é prejudicado pelo aumento do risco de outras formas de doenças fatais no coração", explica.
+
+          Os limites de consumo de álcool recomendados em Itália, Portugal e Espanha são quase 50% maiores que os do Reino Unido - nos Estados Unidos, esse índice é quase o dobro no caso de homens. O Brasil não tem recomendação oficial sobre os limites do consumo de álcool.
+
+          Mas Victoria Taylor, nutricionista da Fundação Britânica do Coração, instituição que financiou parte do estudo, diz que esse tipo de recomendação deve ser encarado como um limite e não como um alvo a se alcançar. "O ideal seria beber bem menos que isso", afirma.
+
+          Angela Wood, da Universidade de Cambridge, vai na mesma linha. "A mensagem da pesquisa é a seguinte: se você já bebe álcool, saiba que beber menos pode ajudá-lo a viver mais e diminuir os riscos de desenvolver várias doenças graves".rem
+          lo"Embora o doenças cardíacas não fatais sejam menos prováveis em pessoas que bebem, esse benefício é prejudicado pelo aumento do risco de outras formas de doenças fatais no coração", explica.
+
+          Os limites de consumo de álcool recomendados em Itália, Portugal e Espanha são quase 50% maiores que os do Reino Unido - nos Estados Unidos, esse índice é quase o dobro no caso de homens. O Brasil não tem recomendação oficial sobre os limites do consumo de álcool.
+
+          Mas Victoria Taylor, nutricionista da Fundação Britânica do Coração, instituição que financiou parte do estudo, diz que esse tipo de recomendação deve ser encarado como um limite e não como um alvo a se alcançar. "O ideal seria beber bem menos que isso", afirma.
+
+          Angela Wood, da Universidade de Cambridge, vai na mesma linha. "A mensagem da pesquisa é a seguinte: se você já bebe álcool, saiba que beber menos pode ajudá-lo a viver mais e diminuir os riscos de desenvolver várias doenças graves".rem
+          lo"Embora o doenças cardíacas não fatais sejam menos prováveis em pessoas que bebem, esse benefício é prejudicado pelo aumento do risco de outras formas de doenças fatais no coração", explica.
+
+          Os limites de consumo de álcool recomendados em Itália, Portugal e Espanha são quase 50% maiores que os do Reino Unido - nos Estados Unidos, esse índice é quase o dobro no caso de homens. O Brasil não tem recomendação oficial sobre os limites do consumo de álcool.
+
+          Mas Victoria Taylor, nutricionista da Fundação Britânica do Coração, instituição que financiou parte do estudo, diz que esse tipo de recomendação deve ser encarado como um limite e não como um alvo a se alcançar. "O ideal seria beber bem menos que isso", afirma.
+
+          Angela Wood, da Universidade de Cambridge, vai na mesma linha. "A mensagem da pesquisa é a seguinte: se você já bebe álcool, saiba que beber menos pode ajudá-lo a viver mais e diminuir os riscos de desenvolver várias doenças graves".rem
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+
