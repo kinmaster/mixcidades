@@ -20,4 +20,7 @@
 $(document).ready(function(){
     //$('.sidenav-trigger').sidenav();
     $('.slider').slider();
+    $('.sid').sideNav();
+    $('select').material_select();
+    
   });

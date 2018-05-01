@@ -1,10 +1,15 @@
 <p id="notice"><%= notice %></p>
-<div class="">
+
   <div class="section">
 
     <div class="row">
       <div class="col s12 m8 ">
+        <h6 class="flow-text">
+          <i class="material-icons ">access_time</i> <%= time_ago_in_words(@post.created_at) %>
+          - <%= @post.category.title%>
+        </h6>
         <h3 class="header"><%= @post.title %></h3>
+        <h5 class="header"><%= @post.sub %></h5>
         <div id="conteudo"><%= @post.body.html_safe %>
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
@@ -17,6 +22,23 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
+        </div>
+        <div class="row">
+        <h4 class="header">Veja Tambem</h4>
+        <% @vejas.each do |post| %>
+              
+              <div class="col s12 m4">    
+                <div class="card small">
+                  <div class="card-image">
+                    <img src="http://localhost:3000/uploads/ckeditor/pictures/3/content_dirceu2.jpg">
+                    <span class="card-title"></span>
+                  </div>
+                  <div class="card-content">
+                    <p><%= post.title%></p>          
+                  </div>        
+                </div>      
+              </div>
+        <% end %>
         </div>
 
       </div>
@@ -104,6 +126,5 @@
     </div>
 
   </div>
-</div>
 
 <%= link_to 'Back', posts_path %>

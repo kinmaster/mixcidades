@@ -34,12 +34,10 @@
             </form>
           </div>
         </div>
-        
-
-        <a href="#" id="" data-target="slide-out" class="sidenav-trigger button-collapse show-on-large"><%= material_icon.menu %></a>
+        <a href="#" id="botao" data-activates="sid" class="sid button-collapse"><%= material_icon.menu %></a>
       </nav>
 
-      <ul id="slide-out" class="side-nav fixed">
+      <ul id="sid" class="side-nav fixed">
           <li><div class="user-view">
             <div class="">
               <%= image_tag 'logo.svg' %>
@@ -54,8 +52,8 @@
           <li><%= link_to 'Classificado', posts_path , class:"waves-effect" %></li>
           <li><%= link_to 'Emprego', posts_path , class:"waves-effect" %></li>
           <li><%= link_to 'Receitas', posts_path , class:"waves-effect" %></li>
-          <li><%= link_to 'Noticias', posts_path , class:"waves-effect" %></li>
-          <li><%= link_to 'Noticias', posts_path , class:"waves-effect" %></li>
+          <li><%= link_to 'Concurso', posts_path , class:"waves-effect" %></li>
+          <li><%= link_to 'Licitacao', posts_path , class:"waves-effect" %></li>
           <li><%= link_to 'Noticias', posts_path , class:"waves-effect" %></li>
         </ul>
 

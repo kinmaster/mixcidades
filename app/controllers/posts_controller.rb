@@ -10,6 +10,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+   # @veja = Post.all
+    @vejas = Post.all.limit(3)
   end
 
   # GET /posts/new
@@ -69,6 +71,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:user_id, :category_id, :title, :body)
+      params.require(:post).permit(:user_id, :category_id, :title, :body, :sub)
     end
 end

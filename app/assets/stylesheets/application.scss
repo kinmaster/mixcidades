@@ -55,14 +55,23 @@
   color: #fff;
   line-height: 20px;
 }
+
+#botao{
+  display: none;
+}
+
 header, main, footer {
     padding-left: 300px;
   }
 
-  @media only screen and (max-width : 992px) {
+@media only screen and (max-width : 992px) {
     header, main, footer {
       padding-left: 0;
     }
+    #botao{
+      display: block;
+    }
+   
   }
   
       
