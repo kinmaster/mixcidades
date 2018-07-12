@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :event_attachments
+  resources :events
   get 'home/index'
   root 'home#index'
 

@@ -21,8 +21,9 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'materialize-sass'
 gem 'material_icons'
 gem 'ckeditor', github: 'galetahub/ckeditor'
-gem 'carrierwave-dropbox'
+gem 'carrierwave'
 gem 'mini_magick'
+gem 'cloudinary'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes

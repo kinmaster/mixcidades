@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @event.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @event.body %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= image_tag (@event.avatar_url),width:"100%" %>
+</p>
+
+
+      <div class="row">
+    <% @event_attachments.each do |event_attachment| %>
+     
+        <div class="col m3">
+            <%= image_tag (event_attachment.avatar_url), class:"materialboxed", width:"100%" %>
+        </div>
+      <% end %>
+      </div>
+    
+  
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

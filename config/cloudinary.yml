@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: kinmaster
+  api_key: '686458732583362'
+  api_secret: XnhoPlnTGRGeGibZsOa9-ztSJek
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: kinmaster
+  api_key: '686458732583362'
+  api_secret: XnhoPlnTGRGeGibZsOa9-ztSJek
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: kinmaster
+  api_key: '686458732583362'
+  api_secret: XnhoPlnTGRGeGibZsOa9-ztSJek
+  enhance_image_tag: true
+  static_image_support: false

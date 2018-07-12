@@ -23,7 +23,7 @@
       <nav class="top-nav blue darken-3">
         <div class="container">
           <div class="nav-wrapper">  
-          <%= link_to t('.Mix Cidades'), root_path, class: ['brand-logo center page-title'] %>         
+          <%= link_to t('.Mix Cidades'), root_path, class: ['brand-logo center page-title lin'] %>         
           
             <form>
               <div class="input-field right">
@@ -47,8 +47,10 @@
           
           <li><div class="divider"></div></li>
           <li><a class="subheader">Categorias</a></li>
+          <li><%= link_to 'Home', root_path , class:"waves-effect" %></li>
           <li><%= link_to 'Notícias', posts_path , class:"waves-effect" %></li>
           <li><%= link_to 'Esporte', posts_path , class:"waves-effect" %></li>
+          <li><%= link_to 'Eventos', events_path , class:"waves-effect" %></li>
           <li><%= link_to 'Classificado', classifields_path , class:"waves-effect" %></li>
           <li><%= link_to 'Emprego', jobs_path , class:"waves-effect" %></li>
           <li><%= link_to 'Receitas', posts_path , class:"waves-effect" %></li>

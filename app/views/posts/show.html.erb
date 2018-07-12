@@ -10,6 +10,7 @@
         </h6>
         <h3 class="header"><%= @post.title %></h3>
         <h5 class="header"><%= @post.sub %></h5>
+         <%= image_tag(@post.avatar_url) %>
         <div id="conteudo"><%= @post.body.html_safe %>
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"

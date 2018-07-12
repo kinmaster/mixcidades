@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+ 
+    <h3 class="header">Eventos</h3>
+    <div class="divider"></div>
+  <div class="row">
+    <% @events.each do |event| %>  
+  
+    <div class="col s12 m4">
+    <%= link_to event do %>
+      <div class="card medium">
+        <div class="card-image">
+          <%= image_tag(event.avatar_url) %>
+           
+        </div>
+        <div class="card-content">
+          <p class="card-title grey-text flow-text"><%= event.title %></p>
+        </div>
+        <div class="card-action">
+            <div class="col m3">
+              <h5 class="red-text center"><%= event.date.to_formatted_s(:short) %></h5>
+            </div>
+            <div class="col m9">
+              <p class="red-text"><%= event.address %></p>
+              <p class="red-text"><%= event.city %></p>    
+            </div>     
+        </div>
+      </div>
+      <% end %>
+    </div>
+  
+
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Event', new_event_path %>
