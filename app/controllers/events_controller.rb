@@ -48,6 +48,9 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
+          params[:event_attachments]['avatar'].each do |a|
+           @post_attachment = @event.event_attachments.create!(:avatar => a, :event_id => @event.id)
+          end
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
@@ -75,7 +78,7 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :body, :date, :avatar, event_attachments_attributes: 
+      params.require(:event).permit(:title, :body, :date, :city, :address, :avatar, event_attachments_attributes: 
       [:id, :post_id, :avatar])
     end
 end

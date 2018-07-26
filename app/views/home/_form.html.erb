@@ -1,62 +1,56 @@
 
   <div class="divider"></div>
  
-    <div class="col s12 m12 l6 CoverImage card small"> 
-      
-    </div>
+  <div class="col s12 m6 l6">
+    <%= link_to @posts.third do %>
+      <div class="card ">
+        <div class="card-image ">
+          <%= image_tag(@posts.third.avatar_url) %>  
+          <span class="card-title"><%= @posts.third.title %></span>
+          
+        </div> 
+      </div>
+    <% end %>
+  </div>
+  <div class="col s12 m6 l6">
+  <div class="row">
+   <div class="col s12 m12 l12">
+    <%= link_to @posts.second do %>
+      <div class="card horizontal">
+        <div class="card-image">
+          <%= image_tag(@posts.second.avatar_url) %>  
+        </div> 
+        <div class="card-stacked">
+          <div class="card-content">
+            <span class="sub2  grey-text text-darken-4"><%= @posts.second.title[0..35]%></span>
+          </div>
+          <div class="card-action">
+            <span class="red-text text-darken-2"><%= @posts.second.category.title%> </span> - 
+            <span class="red-text text-darken-2"> <%= time_ago_in_words(@posts.second.created_at) %></span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-    <div class="col s12 m6 l3">    
-      <div class="card small">
+   <div class="col s12 m12 l12">
+    <%= link_to @posts.first do %>
+      <div class="card horizontal">
         <div class="card-image">
-          <img src="http://localhost:3000/uploads/ckeditor/pictures/3/content_dirceu2.jpg">
-          <span class="card-title"></span>
+          <%= image_tag(@posts.first.avatar_url) %>  
+        </div> 
+        <div class="card-stacked">
+          <div class="card-content">
+            <span class="sub2 activator grey-text text-darken-4"><%= @posts.first.title[0..35]%></span> 
+          </div>
+          <div class="card-action">
+          <span class="red-text text-darken-2"><%= @posts.first.category.title%> </span> - 
+          <span class="red-text text-darken-2"> <%= time_ago_in_words(@posts.first.created_at) %></span>
+          </div>  
         </div>
-        <div class="card-content">
-          <h6><%= @posts.third.title%></h6>   
-          <%= link_to 'Mais + ', post %>       
-        </div>        
-      </div>      
-    </div>
+      </div>
+    <% end %>
+  </div>
 
-    <div class="col s12 m6 l3">    
-      <div class="card small">
-        <div class="card-image">
-          <img src="http://localhost:3000/uploads/ckeditor/pictures/3/content_dirceu2.jpg">
-          <span class="card-title"></span>
-        </div>
-        <div class="card-content">
-          <p><%= @posts.second.title %></p>
-        </div>
-      </div>      
-    </div>
-
-    <div class="col s12 m6 l3">    
-      <div class="card small">
-        <div class="card-image">
-          <img src="http://localhost:3000/uploads/ckeditor/pictures/3/content_dirceu2.jpg">
-          <span class="card-title"><%= @posts.first.title %></span>
-        </div>
-        <div class="card-content">
-          <p><%= @posts.first.sub %></p>
-        </div>
-      </div>      
-    </div>
-    <div class="col s12 m6 l3">    
-      <div class="card small">
-        <div class="card-image">
-          <img src="https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2018/04/20/5ada60640b522.jpeg">
-          <span class="card-title"><%= @posts.first.title %></span>
-        </div>
-        <div class="card-content">
-          <p><%= @posts.first.sub %></p>
-        </div>
-      </div>      
-    </div>
-    <div class="col s12 m12 l6">    
-      <div class="card small">
-        <div class="card-image image">
-          <img src="https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2018/04/20/100829132gettyimages-615269202.jpg">
-          <span class="card-title"><%= @posts.first.title %></span>
-        </div>
-      </div>      
-    </div>
+</div>        
+</div>  

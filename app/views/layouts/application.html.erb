@@ -23,15 +23,8 @@
       <nav class="top-nav blue darken-3">
         <div class="container">
           <div class="nav-wrapper">  
-          <%= link_to t('.Mix Cidades'), root_path, class: ['brand-logo center page-title lin'] %>         
-          
-            <form>
-              <div class="input-field right">
-                <input id="search" type="search" required>
-                <label class="label-icon" for="search"><i class="large material-icons">search</i></label>
-                <i class="material-icons">close</i>
-              </div>
-            </form>
+          <%= link_to t('Mix Cidades'), root_path, class: ['brand-logo center page-title lin'] %>
+           
           </div>
         </div>
         <a href="#" id="botao" data-activates="sid" class="sid button-collapse"><%= material_icon.menu %></a>
@@ -53,6 +46,7 @@
           <li><%= link_to 'Eventos', events_path , class:"waves-effect" %></li>
           <li><%= link_to 'Classificado', classifields_path , class:"waves-effect" %></li>
           <li><%= link_to 'Emprego', jobs_path , class:"waves-effect" %></li>
+          <li><%= link_to 'Guia Comercial', jobs_path , class:"waves-effect" %></li>
           <li><%= link_to 'Receitas', posts_path , class:"waves-effect" %></li>
           <li><%= link_to 'Concurso', posts_path , class:"waves-effect" %></li>
           <li><%= link_to 'Licitacao', posts_path , class:"waves-effect" %></li>

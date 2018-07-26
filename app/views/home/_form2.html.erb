@@ -1,45 +1,21 @@
 
  <div class="divider"> </div>
-
-    <div class="col s12 m6 l3">    
+<% @esportes.each do |post| %>
+    <div class="col s12 m6 l3">   
+    <%= link_to post do %> 
       <div class="card small">
         <div class="card-image image">
-          <img src="https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2018/04/20/100829132gettyimages-615269202.jpg">
-          <span class="card-title"><%= @posts.first.title %></span>
-        </div>  
-      </div>      
-    </div>
-    <div class="col s12 m6 l3">    
-      <div class="card small">
-        <div class="card-image image">
-          <img src="https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2018/04/20/100829132gettyimages-615269202.jpg">
-          <span class="card-title"><%= @posts.first.title %></span>
+          <%= image_tag(post.avatar_url) %>  
         </div> 
-      </div>      
-    </div>
-
-    <div class="col s12 m6 l3">    
-      <div class="card small">
-        <div class="card-image">
-          <img src="http://localhost:3000/uploads/ckeditor/pictures/3/content_dirceu2.jpg">
-          <span class="card-title"></span>
-        </div>
         <div class="card-content">
-          <p><%= @posts.third.title%></p>  
-        </div>        
-      </div>      
+          <span class="sub2 activator grey-text text-darken-4"><%= post.title %></span>
+        </div>
+        <div class="card-action">
+         <span class="green-text text-darken-2"><%= post.category.title%> </span> - 
+         <span class="green-text text-darken-2"> <%= time_ago_in_words(post.created_at) %></span>
+        </div> 
+      </div> 
+      <% end %>     
     </div>
-
-     <div class="col s12 m6 l3">    
-      <div class="card small">
-        <div class="card-image">
-          <img src="http://localhost:3000/uploads/ckeditor/pictures/3/content_dirceu2.jpg">
-          <span class="card-title"></span>
-        </div>
-        <div class="card-content">
-          <p><%= @posts.second.title %></p>
-        </div>
-      </div>      
-    </div>  
-</div>
+<% end %> 
 

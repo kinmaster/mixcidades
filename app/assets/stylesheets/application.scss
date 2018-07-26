@@ -17,35 +17,40 @@
  @import "material_icons";
 
 
+a:hover{
+  color: #333;
+}
+.card-h{
+  height: 360px;
+}
+.sub{
+  font-size: 1.6rem;
+  line-height: 1.5rem;
+}
+.sub2{
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
  .home{
      margin: 0px 55px;
  }
-#conteudo p{
-    font-size: 1.2rem;
+ .bold{
+   font-weight: bold;
+ }
+.conteudo p{
+    font-size: 1.5rem;
+    line-height: 2.5rem;
     text-align: justify;
     color: #333;
 }
-#conteudo p img{
+.conteudo p img{
     width: 100%;
 }
 .topo{
     height: 300px;
 }
-.CoverImage {
-    
-  background-image: url("https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2018/04/20/100822747gettyimages-909145274.jpg");
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0 auto;
-  max-height: 300px;
-  max-width: 1000px;
-  margin-top: 8px;
-  font-size: 24px;
-  font-weight: 300;
-  
-  
-  
+.imagem {
+  width: 100%;  
 }
 .texto-link{
   position: absolute;
@@ -63,6 +68,12 @@
 header, main, footer {
     padding-left: 300px;
   }
+.card-sub{
+  text-align: justify;
+}
+.link-mais{
+  margin-right: 25px;
+}
 
 @media only screen and (max-width : 992px) {
     header, main, footer {
@@ -74,6 +85,9 @@ header, main, footer {
     }
     .lin:hover{
       background-color: none;
+    }
+    .home{
+      margin: 0px;
     }
    
   }
