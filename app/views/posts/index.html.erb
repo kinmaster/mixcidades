@@ -2,10 +2,15 @@
 
 
 
+    <% if (@posts.first.category.id == 3)%>
+    <h3 class="header green-text text-darken-2">Esporte</h3>
+    <% else %>
+      <h3 class="header red-text text-darken-2">Notícias</h3>
+    <% end %>
     
-    <h3 class="header red-text text-darken-2">Notícias</h3>
     <div class="divider"></div>
 <div class="row">
+<%= @paramss %> 
    <% @posts.each do |post| %>
     <div class="col s12 m6 l4">   
     <%= link_to post do %> 
@@ -26,9 +31,3 @@
     </div>
   <% end %> 
 </div>
-    
-  
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>

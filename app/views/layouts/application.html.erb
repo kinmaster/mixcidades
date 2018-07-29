@@ -42,7 +42,7 @@
           <li><a class="subheader">Categorias</a></li>
           <li><%= link_to 'Home', root_path , class:"waves-effect" %></li>
           <li><%= link_to 'Notícias', posts_path , class:"waves-effect" %></li>
-          <li><%= link_to 'Esporte', posts_path , class:"waves-effect" %></li>
+          <li><%= link_to 'Esporte', posts_path(category: 3) , class:"waves-effect" %></li>
           <li><%= link_to 'Eventos', events_path , class:"waves-effect" %></li>
           <li><%= link_to 'Classificado', classifields_path , class:"waves-effect" %></li>
           <li><%= link_to 'Emprego', jobs_path , class:"waves-effect" %></li>

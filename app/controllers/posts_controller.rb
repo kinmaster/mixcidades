@@ -4,14 +4,22 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    if (params.has_key?(:category))
+      @posts = Post.where(category: params[:category]).reverse_order
+    else
+      @posts = Post.where.not(category: 3).reverse_order
+      @paramss = params[:category]
+    end
+
+
+    
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
    # @veja = Post.all
-    @vejas = Post.all.limit(3)
+    @vejas = Post.limit(3).reverse_order
   end
 
   # GET /posts/new

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180712173532) do
+ActiveRecord::Schema.define(version: 20180729212417) do
 
   create_table "capacities", force: :cascade do |t|
     t.integer "user_id"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20180712173532) do
     t.boolean "sale"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
     t.index ["user_id"], name: "index_classifields_on_user_id"
   end
 

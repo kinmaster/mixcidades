@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
+
+<div class="col m6 center">
+  <%= image_tag (@event.avatar_url),width:"80%" %>
+</div>
 <div class="row">
             <div class="col m10">
               <h3 class="header"><%= @event.title %></h3>
@@ -6,9 +10,6 @@
             <div class="col m1">
               <h5 class="red-text  circle center"><%= @event.date.to_formatted_s(:short) %></h5>   
             </div>
-</div>
-<div class="col m6 center">
-  <%= image_tag (@event.avatar_url),width:"80%" %>
 </div>
 <div class="col s12">
   <h5 class="header">Detalhes</h5>
@@ -41,7 +42,4 @@
         </div>
       <% end %>
       </div>
-    
-  
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Voltar', events_path, class: 'volta waves-effect waves-light btn white-text blue' %>

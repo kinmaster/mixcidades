@@ -11,7 +11,8 @@
       <th>Value</th>
       <th>Date</th>
       <th>Sale</th>
-      <th colspan="3"></th>
+      <th>imagem</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -24,6 +25,7 @@
         <td><%= classifield.value %></td>
         <td><%= classifield.date %></td>
         <td><%= classifield.sale %></td>
+         <td><%= classifield.avatar_url %></td>
         <td><%= link_to 'Show', classifield %></td>
         <td><%= link_to 'Edit', edit_classifield_path(classifield) %></td>
         <td><%= link_to 'Destroy', classifield, method: :delete, data: { confirm: 'Are you sure?' } %></td>

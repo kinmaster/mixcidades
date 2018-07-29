@@ -8,11 +8,11 @@
         <h5 class="grey-text text-darken-2"><%= @post.sub %></h5>
         <div class="divider"></div>
 
-        <div class="">
-          <p>Por: <%= @post.user.name%></p>
-          <p>Atualizado: <%= time_ago_in_words(@post.created_at) %></p>
-          <p></p>
-        </div>
+        <blockquote class="left">
+          <p class="bold">Por <%= @post.user.name%></p>
+          <p>Atualizado em <%= time_ago_in_words(@post.created_at) %></p>
+          
+        </blockquote>
 
         <div class="conteudo col s12 m12 l10 offset-l1">
           <%= image_tag(@post.avatar_url, class:"imagem")%>
@@ -20,23 +20,30 @@
         </div>
       </div>
     </div>
-        <h4 class="header left">Veja Tambem</h4>
-        <div class="row">
-        <% @vejas.each do |post| %>
-              
-              <div class="col s12 m4">    
+</div>       
+<div class="divider"></div>
+      <div class="row">
+        <h5 class="header">Veja Também</h5>
+        <% @vejas.each do |post| %>    
+            <div class="col s12 m6 l4">   
+              <%= link_to post do %> 
                 <div class="card small">
-                  <div class="card-image">
-                    <img src="http://localhost:3000/uploads/ckeditor/pictures/3/content_dirceu2.jpg">
-                    <span class="card-title"></span>
-                  </div>
+                  <div class="card-image image">
+                    <%= image_tag(post.avatar_url) %>  
+                  </div> 
                   <div class="card-content">
-                    <p><%= post.title%></p>          
-                  </div>        
-                </div>      
-              </div>
+                    <p class="sub2 grey-text text-darken-4 card-sub"><%= post.title %></p>
+                    
+                  </div>
+                  <div class="card-action">
+                  <span class="red-text text-darken-2"><%= post.category.title%> </span> - 
+                  <span class="red-text text-darken-2"> <%= time_ago_in_words(post.created_at) %></span>
+                  </div> 
+                </div> 
+              <% end %>     
+            </div>
         <% end %>
-        </div>
-  </div>
+      </div>
+  
 
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Voltar', posts_path, class: ' volta waves-effect waves-light btn white-text blue' %>

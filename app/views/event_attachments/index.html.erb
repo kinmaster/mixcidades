@@ -14,8 +14,8 @@
   <tbody>
     <% @event_attachments.each do |event_attachment| %>
       <tr>
-        <td><%= event_attachment.event %></td>
-        <td><%= event_attachment.avatar %></td>
+        <td><%= event_attachment.event.title %></td>
+        <td><%= image_tag (event_attachment.avatar_url),width:"25%" %></td>
         <td><%= link_to 'Show', event_attachment %></td>
         <td><%= link_to 'Edit', edit_event_attachment_path(event_attachment) %></td>
         <td><%= link_to 'Destroy', event_attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
