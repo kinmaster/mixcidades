@@ -1,34 +1,69 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @classifield.user %>
-</p>
+<div class="section">
 
-<p>
-  <strong>Title:</strong>
-  <%= @classifield.title %>
-</p>
+  <div class="row">
+      <div class="col s12 m12 l6">
+      <div class="slider">
+    <ul class="slides">
+      <li>
+        <%= image_tag(@classifield.avatar_url, class:"imagem")%>
+        
+      </li>
+      <li>
+        <%= image_tag(@classifield.avatar_url, class:"imagem")%>
+        
+      </li>
+      <li>
+        <%= image_tag(@classifield.avatar_url, class:"imagem")%>
+        
+      </li>
+      <li>
+        <%= image_tag(@classifield.avatar_url, class:"imagem")%>
+        
+      </li>
+    </ul>
+  </div>
+      </div> 
+      <div class="col s12 l6">
+      <h4 class="header"><%= @classifield.title %></h4>
+      <h3 class="header">R$ <%= @classifield.value %></h3>
+        <div class="col l12">
+         <blockquote class="left">
+              <p class="bold">Vendedor <%= @classifield.user.name%></p>
+              <p class="bold"> <%= @classifield.city.description%></p>
+              <p class="bold">Contato <%= @classifield.phone%></p>
+              <p>Atualizado em <%= time_ago_in_words(@classifield.created_at) %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @classifield.description %>
-</p>
+          </blockquote>
+        </div>
+      </div>
+      <div class="divider"></div>
+        <div class="col s12 l12">
+          <p class="bold sub2">Descricao</p>
+          <h5 class="grey-text text-darken-2"><%= @classifield.description %></h5>
+        </div>
+  </div>
+</div>       
+<div class="divider"></div>
+      <div class="row">
+        <h5 class="header">Veja Também</h5>
+        <% @vejas.each do |post| %>    
+            <div class="col s12 m12 l4">   
+              <%= link_to post do %> 
+                <div class="card small">
+                  <div class="card-image image">
+                    <%= image_tag(post.avatar_url) %>  
+                  </div> 
+                  <div class="card-content">
+                  <p class="sub2 activator green-text text-darken-4">R$ <%= post.value %></p>
+                    <p class="sub2 grey-text text-darken-4 card-sub"><%= post.title %></p>
+                  </div> 
+                </div> 
+              <% end %>     
+            </div>
+        <% end %>
+      </div>
+  
 
-<p>
-  <strong>Value:</strong>
-  <%= @classifield.value %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @classifield.date %>
-</p>
-
-<p>
-  <strong>Sale:</strong>
-  <%= @classifield.sale %>
-</p>
-
-<%= link_to 'Edit', edit_classifield_path(@classifield) %> |
-<%= link_to 'Back', classifields_path %>
+<%= link_to 'Voltar', classifields_path, class: ' volta waves-effect waves-light btn white-text blue' %>

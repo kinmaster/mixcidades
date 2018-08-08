@@ -20,14 +20,32 @@
 
   <body>
   <header>
-      <nav class="top-nav blue darken-3">
+
+                <ul id="drop" class="dropdown-content">
+                  <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+                  <li class="divider"></li>
+                  <li><a href="#!">three</a></li>
+                </ul>
+      <nav class="blue darken-3">
         <div class="container">
-          <div class="nav-wrapper">  
-          <%= link_to t('Mix Cidades'), root_path, class: ['brand-logo center page-title lin'] %>
-           
+          <div class="nav-wrapper">
+            <%= link_to ('Mix Cidades'), root_path, class: ['brand-logo center page-title lin'] %>
+            <ul class="right ">  
+              <% if user_signed_in? %>
+                <li><a class="dropdown-trigger" href="#" data-target="drop"><%= image_tag current_user.avatar_url, class:"avatar" %></a></li> 
+              <% else %>
+              <li>
+                <%= link_to new_user_session_path, :class => 'navbar-link' do  %>
+                  <i class="material-icons white-text">account_circle</i>
+                <% end %>
+              </li>
+              <% end %>
+            </ul>
           </div>
+        
+        <a href="#" id="botao" data-activates="sid" class="sid sidenav-trigger"><%= material_icon.menu %></a>
         </div>
-        <a href="#" id="botao" data-activates="sid" class="sid button-collapse"><%= material_icon.menu %></a>
       </nav>
 
       <ul id="sid" class="side-nav fixed">

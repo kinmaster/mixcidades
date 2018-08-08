@@ -1,39 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <h3 class="header orange-text text-darken-2">Classifields</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Value</th>
-      <th>Date</th>
-      <th>Sale</th>
-      <th>imagem</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @classifields.each do |classifield| %>
-      <tr>
-        <td><%= classifield.user %></td>
-        <td><%= classifield.title %></td>
-        <td><%= classifield.description %></td>
-        <td><%= classifield.value %></td>
-        <td><%= classifield.date %></td>
-        <td><%= classifield.sale %></td>
-         <td><%= classifield.avatar_url %></td>
-        <td><%= link_to 'Show', classifield %></td>
-        <td><%= link_to 'Edit', edit_classifield_path(classifield) %></td>
-        <td><%= link_to 'Destroy', classifield, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="divider"> </div>
+<div class="row">
+     <% @classifields.each do |post| %>
+    <div class="col s12 m12 l4">   
+    <%= link_to post do %> 
+      <div class="card small">
+        <div class="card-image image">
+          <%= image_tag(post.avatar_url) %>  
+        </div> 
+        <div class="card-content">
+          <p class="sub2 activator green-text text-darken-4">R$ <%= post.value %></p>
+          <span class="sub2 activator grey-text text-darken-4"><%= post.title %></span>
+        </div>
+         
+      </div> 
+      <% end %>     
+    </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Classifield', new_classifield_path %>
+</div>

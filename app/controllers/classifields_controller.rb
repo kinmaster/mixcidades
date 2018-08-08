@@ -10,6 +10,7 @@ class ClassifieldsController < ApplicationController
   # GET /classifields/1
   # GET /classifields/1.json
   def show
+    @vejas = Classifield.limit(3).reverse_order
   end
 
   # GET /classifields/new
@@ -25,7 +26,7 @@ class ClassifieldsController < ApplicationController
   # POST /classifields.json
   def create
     @classifield = Classifield.new(classifield_params)
-
+    @classifield.user = current_user
     respond_to do |format|
       if @classifield.save
         format.html { redirect_to @classifield, notice: 'Classifield was successfully created.' }
@@ -69,6 +70,6 @@ class ClassifieldsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def classifield_params
-      params.require(:classifield).permit(:user_id, :title, :description, :value, :date, :sale, :avatar)
+      params.require(:classifield).permit(:user_id, :title, :description, :value, :date, :sale, :avatar, :city_id, :phone)
     end
 end

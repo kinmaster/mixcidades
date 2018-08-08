@@ -23,5 +23,16 @@ $(document).ready(function(){
     $('.sid').sideNav();
     $('select').material_select();
     $('.materialboxed').materialbox();
-    
+    $('.dropdown-trigger').dropdown();
+        
+
+ CKEDITOR.replace( 'mini', {
+  toolbar:
+  [
+    { name: 'basicstyles', items : [ 'Bold','Italic' ] },
+    { name: 'paragraph', items : [ 'NumberedList','BulletedList' ] },
+    { name: 'tools', items : [ 'Maximize' ] }
+  ]}         
+);
+
   });

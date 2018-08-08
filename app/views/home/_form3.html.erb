@@ -1,16 +1,14 @@
- <div class="divider"> </div>
+
 <% @classifields.each do |post| %>
-    <div class="col s12 m6 l3">   
+    <div class="col s12 m12 l3">   
     <%= link_to post do %> 
       <div class="card small">
         <div class="card-image image">
           <%= image_tag(post.avatar_url) %>  
         </div> 
         <div class="card-content">
+          <p class="sub2 activator green-text text-darken-4">R$ <%= post.value %></p>
           <span class="sub2 activator grey-text text-darken-4"><%= post.title %></span>
-        </div>
-        <div class="card-action center">
-         <span class="sub2 green-text text-darken-2">R$ <%= post.value%> </span>
         </div> 
       </div> 
       <% end %>     

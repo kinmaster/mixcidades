@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cities
+  devise_for :users
   resources :event_attachments
   resources :events
   get 'home/index'
