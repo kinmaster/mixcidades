@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  skip_before_action :authenticate_user!, :only => [:index]
   def index
     @posts = Post.last(3)
     @events = Event.last(4)

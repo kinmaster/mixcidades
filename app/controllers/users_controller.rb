@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.friendly.find(params[:id])
+    @classifields = Classifield.where(user: current_user)
+    @jobs = Job.where(user: current_user)
   end
 
   # GET /users/new
@@ -70,6 +72,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :function, :city, :avatar)
+      params.require(:user).permit(:name, :function, :city, :avatar, :email, :password)
     end
 end

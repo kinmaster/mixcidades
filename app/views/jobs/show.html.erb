@@ -1,57 +1,60 @@
 <p id="notice"><%= notice %></p>
+
 <div class="section">
 
-    <div class="row">
-      <div class="col s12 m8 ">
-        <h6 class="flow-text">
-          <i class="material-icons ">access_time</i> <%= time_ago_in_words(@job.created_at) %>
-          - <%= @job.sector.title%>
-        </h6>
-        <h3 class="header"><%= @job.title %></h3>
-        <h5 class="header">Salario: <%= @job.salary %></h5>
-        <h6 class="header">Telefone: <%= @job.phone %></h6>
-        <h6 class="header">Email: <%= @job.email %></h6>
-        <div id="conteudo"><%= @job.description %>
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-            style="display:block; text-align:center;"
-            data-ad-layout="in-article"
-            data-ad-format="fluid"
-            data-ad-client="ca-pub-9835055996289480"
-            data-ad-slot="2961374021">
-            </ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            
+  <div class="row">
+      <div class="col s12 m12 l6">
+        <div class="col l12">
+          <%= image_tag(@job.user.avatar_url, class:"", width: "50%")%>
         </div>
-        <%= link_to 'Back', jobs_path %>
-        <%= link_to 'Edit', edit_job_path(@job) %> |
-        <%= link_to 'Back', jobs_path %>
-        <div class="row">
-        <h4 class="header">Veja Tambem</h4>
-        <% @vagas.each do |post| %>
-              
-              <div class="col s12 m4">    
-                <div class="card small">
-                  <div class="card-image">
-                    <img src="http://localhost:3000/uploads/ckeditor/pictures/3/content_dirceu2.jpg">
-                    <span class="card-title"></span>
-                  </div>
-                  <div class="card-content">
-                    <p><%= post.title%></p>          
-                  </div>        
-                </div>      
-              </div>
-        <% end %>
+      </div>
+      <div class="col s12 l6">
+        <div class="col l12">
+         <blockquote class="left">
+              <h6 class="bold">Empresa <%= @job.user.name%></h6>
+              <p class="bold">Cidade de maringa-PR</p>
+              <p class="bold">Contato <%= @job.phone%></p>
+              <p class="bold">E-mail <%= @job.email%></p>
+              <p>Atualizado em <%= time_ago_in_words(@job.created_at) %></p>
+
+          </blockquote>
         </div>
-
       </div>
-      <div class="col s12 m4">
-        
-      </div>
-    </div>
-
+      <div class="divider"></div>
+        <div class="col s12 l12">
+        <h4 class="header"><%= @job.title %></h4>
+          <p class="bold sub2">Área de Atuação</p>
+           <p class=""> <%= @job.sector.title %></p>
+          <p class="bold sub2">Salário</p>
+           <h5 class=""> <%= @job.salary.value %></h5>
+          <p class="bold sub2">Descrição</p>
+          <p class="grey-text text-darken-2"><%= @job.description.html_safe %></p>
+          <p class="bold sub2">Requisitos</p>
+          <p class="grey-text text-darken-2"><%= @job.requirements.html_safe %></p>
+          <p class="bold sub2">Beneficios</p>
+          <p class="grey-text text-darken-2"><%= @job.benefits.html_safe %></p>
+        </div>
   </div>
+</div>       
+<div class="divider"></div>
+      <div class="row">
+        <h5 class="header">Veja Também</h5>
+        <% @vagas.each do |post| %>    
+            <div class="col s12 m12 l4">   
+              <%= link_to post do %> 
+                <div class="card small">
+                  <div class="card-image image">
+                    <%= image_tag(post.user.avatar_url) %>  
+                  </div> 
+                  <div class="card-content">
+                  <p class="sub2 activator green-text text-darken-4">R$ <%= post.salary.value %></p>
+                    <p class="sub2 grey-text text-darken-4 card-sub"><%= post.title %></p>
+                  </div> 
+                </div> 
+              <% end %>     
+            </div>
+        <% end %>
+      </div>
+  
 
-
+<%= link_to 'Voltar', classifields_path, class: ' volta waves-effect waves-light btn white-text blue' %>

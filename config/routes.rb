@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  resources :salaries
   resources :cities
   devise_for :users
   resources :event_attachments
+  authenticated :user do
+    resources :events, as: :authenticated_root
+  end
+
   resources :events
   get 'home/index'
   root 'home#index'

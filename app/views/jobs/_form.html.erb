@@ -12,11 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :job_user_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :sector_id %>
      <%= form.select :sector_id, Sector.all.collect { |p| [p.title, p.id] }, include_blank: true, class: "" %>
   </div>
@@ -24,16 +19,6 @@
   <div class="field">
     <%= form.label :capacity_id %>
     <%= form.select :capacity_id, Capacity.all.collect { |p| [p.title, p.id] }, include_blank: true, class: "" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :job_title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :job_description %>
   </div>
 
   <div class="field">
@@ -47,16 +32,32 @@
   </div>
 
   <div class="field">
-    <%= form.label :salary %>
-    <%= form.text_field :salary, id: :job_salary %>
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :job_title %>
+  </div>
+  <div class="field">
+    <%= form.label :salary_id %>
+    <%= form.select :salary_id, Salary.all.collect { |p| [p.value, p.id] }, include_blank: false, class: "" %>
   </div>
 
   <div class="field">
     <%= form.label :date %>
-    <%= form.date_select :date, id: :job_date %>
+    <%= form.date_field :date, id: :job_date %>
+  </div>
+<div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :mini1, cols:40 %>
+  </div>
+  <div class="field">
+    <%= form.label :requirements %>
+    <%= form.text_area :requirements, id: :mini2, cols:40 %>
+  </div>
+  <div class="field">
+    <%= form.label :benefits %>
+    <%= form.text_area :benefits, id: :mini3, cols:40 %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Publicar Vaga", class: "btn" %>
   </div>
 <% end %>

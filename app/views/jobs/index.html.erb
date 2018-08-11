@@ -1,28 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <h3 class="header blue-text text-darken-2">Empregos</h3>
+<div class="divider blue darken-2"></div>
 <div class="row">
 <% @jobs.each do |job| %>
-  <div class="col s12 m6 l3">    
-    <div class="card small">
-      <div class="card-stacked">
-     
+  <div class="col s12 m6 l3">  
+  <%= link_to job do %> 
+      <div class="card small">
+        <div class="card-image image">
+          <%= image_tag(job.user.avatar_url) %>  
+        </div> 
         <div class="card-content">
-         <h6 class=""><i class="material-icons tiny ">access_time</i> <%= time_ago_in_words(job.created_at) %></h6>
-        <h5 class="header"><%= job.title %></h5>
-          <p><%= job.description[0..95]%> ...</p>
-          <p>Salario: <%= job.salary %></p>
+          <span class="sub2 activator grey-text text-darken-4"><%= job.title %></span>
+          <p class=""><%= job.sector.title %></p>
         </div>
-        <div class="card-action">
-          <%= link_to 'Ver Vaga', job %>
+        <div class="card-action center">
+            <span class="blue-text text-darken-2">maringa </span> - 
+            <span class="blue-text text-darken-2"> <%= time_ago_in_words(job.created_at) %></span>
         </div>
-      </div>
-    </div>
+         
+      </div> 
+      <% end %>  
   </div>
   <% end %>
 </div>
-
-
-<br>
-
-<%= link_to 'New Job', new_job_path %>

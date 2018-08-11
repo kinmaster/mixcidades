@@ -17,22 +17,39 @@
 //= require ckeditor/init
 //= require_tree .
 
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
     //$('.sidenav-trigger').sidenav();
     $('.slider').slider();
     $('.sid').sideNav();
     $('select').material_select();
     $('.materialboxed').materialbox();
-    $('.dropdown-trigger').dropdown();
+    $('#avatar').dropdown();
+    $('.collapsible').collapsible();
         
 
- CKEDITOR.replace( 'mini', {
-  toolbar:
-  [
-    { name: 'basicstyles', items : [ 'Bold','Italic' ] },
-    { name: 'paragraph', items : [ 'NumberedList','BulletedList' ] },
-    { name: 'tools', items : [ 'Maximize' ] }
-  ]}         
-);
+    CKEDITOR.replace( 'mini1', {
+        toolbar:
+        [
+          { name: 'basicstyles', items : [ 'Bold','Italic' ] },
+          { name: 'paragraph', items : [ 'NumberedList','BulletedList' ] },
+          { name: 'tools', items : [ 'Maximize' ] }
+        ]}         
+      );
+      CKEDITOR.replace( 'mini2', {
+        toolbar:
+        [
+          { name: 'basicstyles', items : [ 'Bold','Italic' ] },
+          { name: 'paragraph', items : [ 'NumberedList','BulletedList' ] },
+          { name: 'tools', items : [ 'Maximize' ] }
+        ]}         
+      );
+      CKEDITOR.replace( 'mini3', {
+        toolbar:
+        [
+          { name: 'basicstyles', items : [ 'Bold','Italic' ] },
+          { name: 'paragraph', items : [ 'NumberedList','BulletedList' ] },
+          { name: 'tools', items : [ 'Maximize' ] }
+        ]}         
+      );
 
   });

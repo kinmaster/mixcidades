@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180807011653) do
+ActiveRecord::Schema.define(version: 20180809184315) do
 
   create_table "capacities", force: :cascade do |t|
     t.integer "user_id"
@@ -110,13 +110,12 @@ ActiveRecord::Schema.define(version: 20180807011653) do
     t.text "description"
     t.string "phone"
     t.string "email"
-    t.float "salary"
+    t.integer "salary_id"
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["capacity_id"], name: "index_jobs_on_capacity_id"
-    t.index ["sector_id"], name: "index_jobs_on_sector_id"
-    t.index ["user_id"], name: "index_jobs_on_user_id"
+    t.text "benefits"
+    t.text "requirements"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -132,6 +131,12 @@ ActiveRecord::Schema.define(version: 20180807011653) do
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["slug"], name: "index_posts_on_slug", unique: true
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "salaries", force: :cascade do |t|
+    t.string "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sectors", force: :cascade do |t|

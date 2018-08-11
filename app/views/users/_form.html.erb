@@ -29,8 +29,14 @@
     <%= form.label :city %>
     <%= form.text_field :city, id: :user_city %>
   </div>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :user_email %>
+  </div>
+  
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+<%= link_to 'Nova Senha', edit_user_registration_path, class: "btn" %>

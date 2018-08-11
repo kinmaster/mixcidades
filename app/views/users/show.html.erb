@@ -1,23 +1,91 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @user.avatar_url %>
-</p>
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<div class="section">
 
-<p>
-  <strong>Function:</strong>
-  <%= @user.function %>
-</p>
+  <div class="row">
+      <div class="col s12 m12 l12 center">
+        <div class="col l3 center offset-l4 ">
+          <%= image_tag(@user.avatar_url(:standard), class:"circle responsive-img", width: "")%>
+        </div>
+        <div class="col l12 s12 center">
+          <h2 class="bold"> <%= @user.name%>
+            <%= link_to edit_user_path(@user) do %>
+              <i class="medium material-icons">edit</i>
+            <% end %>
+          </h2>
+          <h5 class="bold"><%= @user.email%></h5>
+          <h5 class="bold">Cidade de <%= @user.city %></h5>
+        </div>
+      </div>   
+      <div class="col s12 l12 center ">
+         
+          <div class="divider"> </div>
+          <div class="row">
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header header orange-text text-darken-2"><i class="material-icons">local_offer</i>Meus Classificados</div>
+              <div class="collapsible-body">
+              <div class="row">
+              <% @classifields.each do |post| %>
+              <div class="col s12 m12 l4">   
+                <%= link_to post do %> 
+                <div class="card small">
+                  <div class="card-image image">
+                    <%= image_tag(post.avatar_url) %>  
+                  </div> 
+                  <div class="card-content">
+                    <p class="sub2 activator green-text text-darken-4">R$ <%= post.value %></p>
+                    <span class="sub2 activator grey-text text-darken-4"><%= post.title %></span>
+                  </div>
+                </div> 
+                <% end %>     
+              </div>
+              <% end %>
+              </div>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header header blue-text text-darken-2"><i class="material-icons">business_center</i>Meus Empregos</div>
+              <div class="collapsible-body">
+                <div class="row">
+                <% @jobs.each do |job| %>
+                  <div class="col s12 m6 l3">  
+                  <%= link_to job do %> 
+                      <div class="card small">
+                        <div class="card-image image">
+                          <%= image_tag(job.user.avatar_url) %>  
+                        </div> 
+                        <div class="card-content">
+                          <span class="sub2 activator grey-text text-darken-4"><%= job.title %></span>
+                          <p class=""><%= job.sector.title %></p>
+                        </div>
+                        <div class="card-action center">
+                            <span class="blue-text text-darken-2">maringa </span> - 
+                            <span class="blue-text text-darken-2"> <%= time_ago_in_words(job.created_at) %></span>
+                        </div>
+                        
+                      </div> 
+                      <% end %>  
+                  </div>
+                  <% end %>
+                </div>
+              
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header red-text text-darken-2"><i class="material-icons">insert_comment</i>Eu Reporter</div>
+              <div class="collapsible-body"><span>Nao esta disponivel no momento</span></div>
+            </li>
+          </ul>
+              
+          </div>
+      </div>
+      <div class="col s12 l12 center ">
+          <%= link_to('Sair', destroy_user_session_path, :method => :delete, class: ' volta waves-effect waves-light btn white-text red') %>
+      </div>    
+  </div>
+</div>       
 
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+
