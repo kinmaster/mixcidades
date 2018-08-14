@@ -1,0 +1,65 @@
+<%= form_with(model: commercial, local: true) do |form| %>
+  <% if commercial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(commercial.errors.count, "error") %> prohibited this commercial from being saved:</h2>
+
+      <ul>
+      <% commercial.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="file-field input-field">
+  <div class="btn">
+    <span>Imagem</span>
+    <%= form.file_field :avatar, class: "" %>
+  </div>
+   <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+  </div>
+</div>
+<div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :commercial_title %>
+  </div>
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :mini1 %>
+  </div>
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :commercial_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city_id %>
+    <%= form.select :city_id, City.all.collect { |p| [p.description, p.id] }, include_blank: true, class: "" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :commercial_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.select :category_id, Category.where(role: 2).collect { |p| [p.title, p.id] }, include_blank: true, class: ""%>
+  </div>
+  <div class="field">
+  <div class="switch">
+  <%= form.label :role %>
+    <label>
+      Off
+      <%= form.check_box :role %>
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+ </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn" %>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180809184315) do
+ActiveRecord::Schema.define(version: 20180814001647) do
 
   create_table "capacities", force: :cascade do |t|
     t.integer "user_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20180809184315) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role"
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
@@ -69,6 +70,23 @@ ActiveRecord::Schema.define(version: 20180809184315) do
     t.string "phone"
     t.index ["city_id"], name: "index_classifields_on_city_id"
     t.index ["user_id"], name: "index_classifields_on_user_id"
+  end
+
+  create_table "commercials", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "address"
+    t.string "avatar"
+    t.integer "city_id"
+    t.string "phone"
+    t.integer "category_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.integer "role"
+    t.index ["category_id"], name: "index_commercials_on_category_id"
+    t.index ["city_id"], name: "index_commercials_on_city_id"
+    t.index ["user_id"], name: "index_commercials_on_user_id"
   end
 
   create_table "event_attachments", force: :cascade do |t|

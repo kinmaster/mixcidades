@@ -26,6 +26,8 @@ gem 'mini_magick'
 gem 'cloudinary'
 gem 'devise'
 gem 'cancancan'
+gem 'rmagick'
+gem 'rails-assets-jcrop', source: 'https://rails-assets.org'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes

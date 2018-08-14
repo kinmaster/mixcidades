@@ -11,11 +11,13 @@
 // about supported directives.
 //= require jquery
 //= require jquery_ujs
-//= require rails-ujs
+//= require rails-ujs	
+//= require jcrop
 //= require turbolinks
 //= require materialize-sprockets
 //= require ckeditor/init
 //= require_tree .
+
 
 $(document).on('turbolinks:load', function(){
     //$('.sidenav-trigger').sidenav();
@@ -25,6 +27,7 @@ $(document).on('turbolinks:load', function(){
     $('.materialboxed').materialbox();
     $('#avatar').dropdown();
     $('.collapsible').collapsible();
+    $('.modal').modal();
         
 
     CKEDITOR.replace( 'mini1', {

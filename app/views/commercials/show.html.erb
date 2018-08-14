@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+<p id="notice"><%= notice %></p>
+
+<div class="section">
+
+  <div class="row">
+      <div class="col s12 m12 l6">
+      <div class="slider">
+    <ul class="slides">
+      <li>
+        <%= image_tag(@commercial.avatar_url, class:"imagem")%>
+        
+      </li>
+      <li>
+        <%= image_tag(@commercial.avatar_url, class:"imagem")%>
+        
+      </li>
+      <li>
+        <%= image_tag(@commercial.avatar_url, class:"imagem")%>
+        
+      </li>
+      <li>
+        <%= image_tag(@commercial.avatar_url, class:"imagem")%>
+        
+      </li>
+    </ul>
+  </div>
+      </div> 
+      <div class="col s12 l6">
+      <h1 class="header"><%= @commercial.title %></h1>
+      <h4 class="header"><%= @commercial.city.description%> </h4>
+        <div class="col l12">
+         <blockquote class="left">
+              <p class="bold"><%= @commercial.category.title%></p>
+              <p class="bold"> <%= @commercial.address%></p>
+              <p class="bold">Contato <%= @commercial.phone%></p>
+              <p>Atualizado em <%= time_ago_in_words(@commercial.created_at) %></p>
+
+          </blockquote>
+        </div>
+      </div>
+      <div class="divider"></div>
+        <div class="col s12 l12">
+          <p class="bold sub2">Descricao</p>
+          <h5 class="grey-text text-darken-2"><%= @commercial.description.html_safe %></h5>
+        </div>
+  </div>
+</div>       
+<div class="divider"></div>
+      <div class="row">
+        <h5 class="header">Veja Também</h5>
+        <% @vejas.each do |post| %>    
+            <div class="col s12 m12 l4">   
+              <%= link_to post do %> 
+                <div class="card small">
+                  <div class="card-image image">
+                    <%= image_tag(post.avatar_url) %>  
+                  </div> 
+                  <div class="card-content">
+                    <p class="sub2 activator grey-text text-darken-4"><%= post.title %></p>
+                    <p class="grey-text"><%= post.category.title %></p>
+                    <p class="grey-text"><%= post.city.description %></p>
+                  </div> 
+                </div> 
+              <% end %>     
+            </div>
+        <% end %>
+      </div>
+  
+
+<%= link_to 'Voltar', commercials_path, class: ' volta waves-effect waves-light btn white-text blue' %>

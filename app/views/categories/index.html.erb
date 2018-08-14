@@ -6,8 +6,9 @@
   <thead>
     <tr>
       <th>User</th>
+      <th>Role</th>
       <th>Title</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -15,6 +16,7 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.user %></td>
+        <td><%= category.role %></td>
         <td><%= category.title %></td>
         <td><%= link_to 'Show', category %></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>

@@ -14,7 +14,6 @@
     <%= form.label :avatar %><br>
     <%= form.file_field :avatar %>
   </div>
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Cortar Foto</a>
 
   <div class="field">
     <%= form.label :name %>
@@ -41,3 +40,4 @@
   </div>
 <% end %>
 <%= link_to 'Nova Senha', edit_user_registration_path, class: "btn" %>
+

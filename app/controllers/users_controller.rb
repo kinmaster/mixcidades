@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :sanitize_fields_params, only: [:create, :update]
+ 
+  
   # GET /users
   # GET /users.json
+
   def index
     @users = User.all
   end
@@ -31,8 +34,13 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        if params[:user][:avatar].present?
+          render :crop
+        else
+          format.html { redirect_to @user, notice: 'User was successfully created.' }
+          format.json { render :show, status: :created, location: @user }
+        end
+        
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -43,15 +51,19 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    respond_to do |format|
+    
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        if params[:user][:avatar].present?
+          render :crop
+        else        
+         redirect_to @user, notice: 'User was successfully updated.' 
+        
+        end
       else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+         render :edit 
+        
       end
-    end
+    
   end
 
   # DELETE /users/1
@@ -65,6 +77,17 @@ class UsersController < ApplicationController
   end
 
   private
+  def sanitize_fields_params
+    $logo_crop_x = 0
+    $logo_crop_y = 0
+    $logo_crop_w = 0
+    $logo_crop_h = 0
+
+    $logo_crop_x = params[:user][:logo_crop_x]
+    $logo_crop_y = params[:user][:logo_crop_y]
+    $logo_crop_w = params[:user][:logo_crop_w]
+    $logo_crop_h = params[:user][:logo_crop_h]
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.friendly.find(params[:id])
@@ -72,6 +95,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :function, :city, :avatar, :email, :password)
+      params.require(:user).permit(:name, :function, :city, :avatar, :email, :password, :logo_crop_x, :logo_crop_y, :logo_crop_w, :logo_crop_h)
     end
 end

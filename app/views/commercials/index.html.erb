@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="header orange-text text-darken-2">Comércios em Destaque</h1>
+<div class="divider"> </div>
+<div class="row">
+     <% @commercials.each do |post| %>
+    <div class="col s12 m12 l4">   
+    <%= link_to post do %> 
+      <div class="card small">
+        <div class="card-image image">
+          <%= image_tag(post.avatar_url) %>  
+        </div> 
+
+        <div class="card-content">
+          <p class="sub2 activator grey-text text-darken-4"><%= post.title %></p>
+          <p class="grey-text"><%= post.category.title %></p>
+          <p class="grey-text"><%= post.city.description %></p>
+        </div>
+         
+      </div> 
+      <% end %>     
+    </div>
+    <% end %>
+</div>
+<div class="col s12 l4">
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>Comércios</h4></li>
+        <% @commercials2.each do |post| %>
+          <li class="collection-item">
+            <%= link_to post do %> 
+              <h6 class="black-text" ><%= post.title %></h6>
+              <p class="grey-text"><%= post.city.description %></p>
+            <% end %> 
+          </li>
+        <% end %>
+      </ul>
+</div>
+
+<br>
+
+<%= link_to 'New Commercial', new_commercial_path %>
