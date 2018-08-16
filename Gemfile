@@ -20,7 +20,7 @@ gem 'friendly_id', '~> 5.1.0'
 # Sempre inclua
 gem 'materialize-sass'
 gem 'material_icons'
-gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'cloudinary'

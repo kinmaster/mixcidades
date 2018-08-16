@@ -1,7 +1,7 @@
 <p id="notice" ><%= notice %></p>
 
  
-    <h3 class="header deep-purple-text text-darken-1">Eventos</h3>
+    <h1 class="header deep-purple-text text-darken-1">Eventos</h1>
     <div class="divider deep-purple darken-1"></div>
   <div class="row">
     <% @events.each do |event| %>  
@@ -22,7 +22,7 @@
             </div>
             <div class="col m9">
               <p class="red-text"><%= event.address %></p>
-              <p class="red-text"><%= event.city %></p>    
+              <p class="red-text"><%= event.city.description %></p>    
             </div>     
         </div>
       </div>

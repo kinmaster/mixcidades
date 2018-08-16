@@ -1,6 +1,8 @@
 # encoding: utf-8
+require 'carrierwave'
 
 class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base
+  include Ckeditor::Backend::CarrierWave
   include Cloudinary::CarrierWave
 
   # Include RMagick or ImageScience support:
@@ -10,20 +12,22 @@ class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   #storage :file
-
+  process :extract_dimensions
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  #def store_dir
-   # "uploads/ckeditor/attachments/#{model.id}"
-  #end
+  def store_dir
+    "/image/upload/#{model.data_file_name}"
+  end
 
+
+def extension_white_list
+  Ckeditor.attachment_file_types
+end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
-  version :standard do
-    process :resize_to_fill => [100, 150, :north]
-  end
+  #process :read_dimensions
   # Process files as they are uploaded:
   # process :scale => [200, 300]
   #
@@ -33,7 +37,5 @@ class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  #def extension_white_list
-  #  Ckeditor.attachment_file_types
-  #end
+  
 end

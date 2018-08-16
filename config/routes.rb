@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :imagems
   resources :commercials
   resources :salaries
   resources :cities
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   mount Ckeditor::Engine => '/ckeditor'
+  resources :ckeditor
   resources :jobs
   resources :capacities
   resources :sectors

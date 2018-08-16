@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.all.reverse_order
   end
 
   # GET /events/1
@@ -74,12 +74,12 @@ class EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      @event = Event.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :body, :date, :city, :address, :avatar, event_attachments_attributes: 
+      params.require(:event).permit(:title, :body, :date, :city_id, :address, :avatar, event_attachments_attributes: 
       [:id, :post_id, :avatar])
     end
 end

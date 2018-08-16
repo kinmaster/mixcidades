@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Imagems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Avatar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @imagems.each do |imagem| %>
+      <tr>
+        <td><%= image_tag imagem.avatar_url, width: "150px" %></td>
+        <td><%= imagem.avatar %></td>
+        <td><%= link_to 'Show', imagem %></td>
+        <td><%= link_to 'Edit', edit_imagem_path(imagem) %></td>
+        <td><%= link_to 'Destroy', imagem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Imagem', new_imagem_path %>

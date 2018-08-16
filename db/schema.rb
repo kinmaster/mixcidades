@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180814001647) do
+ActiveRecord::Schema.define(version: 20180815235310) do
 
   create_table "capacities", force: :cascade do |t|
     t.integer "user_id"
@@ -68,7 +68,9 @@ ActiveRecord::Schema.define(version: 20180814001647) do
     t.string "avatar"
     t.integer "city_id"
     t.string "phone"
+    t.string "slug"
     t.index ["city_id"], name: "index_classifields_on_city_id"
+    t.index ["slug"], name: "index_classifields_on_slug", unique: true
     t.index ["user_id"], name: "index_classifields_on_user_id"
   end
 
@@ -106,6 +108,9 @@ ActiveRecord::Schema.define(version: 20180814001647) do
     t.datetime "updated_at", null: false
     t.string "city"
     t.string "address"
+    t.integer "city_id"
+    t.string "slug"
+    t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -118,6 +123,12 @@ ActiveRecord::Schema.define(version: 20180814001647) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "imagems", force: :cascade do |t|
+    t.string "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "jobs", force: :cascade do |t|

@@ -11,16 +11,15 @@
     </div>
   <% end %>
 
- 
-        
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :post_user_id %>
+ <div class="file-field input-field">
+  <div class="btn">
+    <span>Imagem</span>
+    <%= form.file_field :avatar, class: "" %>
   </div>
-  <div class="field">
-    <%= form.hidden_field :avatar_cache %>
-    <%= form.file_field :avatar %>
+   <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Upload one or more files">
   </div>
+</div>
   
 
   <div class="field">
@@ -39,7 +38,7 @@
 
   <div class="field">
     <%= form.label :body %>
-    <%= form.cktext_area :body, id: :post_body %>
+    <%= form.cktext_area :body, id: :kkk%>
   </div>
  
 

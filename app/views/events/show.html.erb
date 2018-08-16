@@ -1,21 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<div class="col m6 center">
-  <%= image_tag (@event.avatar_url),width:"80%" %>
+<div class="col s12 m4 l4">
+  <%= image_tag (@event.avatar_url),width:"100%" %>
 </div>
 <div class="row">
-            <div class="col m10">
+            <div class="col m10 l11">
               <h3 class="header"><%= @event.title %></h3>
             </div>
-            <div class="col m1">
-              <h5 class="red-text  circle center"><%= @event.date.to_formatted_s(:short) %></h5>   
+            <div class="col m1 l1">
+              <h3 class="red-text  circle center"><%= @event.date.to_formatted_s(:short) %></h3>   
             </div>
 </div>
-<div class="col s12">
+<div class="conteudo col s12">
   <h5 class="header">Detalhes</h5>
-  <p>
-    <%= @event.body %>
-  </p>
+  <p><%= @event.body.html_safe %></p>
 </div>
 <div >
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
