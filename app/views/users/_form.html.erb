@@ -14,7 +14,7 @@
     <%= form.label :avatar %><br>
     <%= form.file_field :avatar %>
   </div>
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Cortar Foto</a>
+  
 
   <div class="field">
     <%= form.label :name %>
@@ -22,13 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :function %>
-    <%= form.number_field :function, id: :user_function %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city, id: :user_city %>
+    <%= form.label :city_id %>
+    <%= form.select :city_id, City.all.collect { |p| [p.description, p.id] }, include_blank: true, class: "" %>
   </div>
   <div class="field">
     <%= form.label :email %>

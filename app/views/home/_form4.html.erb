@@ -1,8 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<h1 class="header blue-text text-darken-2">Empregos</h1>
-<div class="divider blue darken-2"></div>
-<div class="row">
 <% @jobs.each do |job| %>
   <div class="col s12 m6 l3">  
   <%= link_to job do %> 
@@ -11,14 +6,15 @@
           <%= image_tag(job.user.avatar_url) %>  
         </div> 
         <div class="card-content">
-        <p class="blue-text text-darken-2"><%= job.user.city.description %> </p>
           <span class="sub2 activator grey-text text-darken-4"><%= job.title %></span>
           <p class=""><%= job.sector.title %></p>
-          <span class="blue-text text-darken-2"> <%= time_ago_in_words(job.created_at) %></span>
+        </div>
+        <div class="card-action center">
+            <span class="blue-text text-darken-2">maringa </span> - 
+            <span class="blue-text text-darken-2"> <%= time_ago_in_words(job.created_at) %></span>
         </div>
          
       </div> 
       <% end %>  
   </div>
   <% end %>
-</div>

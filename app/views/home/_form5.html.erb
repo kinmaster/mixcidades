@@ -1,0 +1,18 @@
+ <% @commercials.each do |post| %>
+    <div class="col s12 m12 l4">   
+    <%= link_to post do %> 
+      <div class="card small">
+        <div class="card-image image">
+          <%= image_tag(post.avatar_url) %>  
+        </div> 
+
+        <div class="card-content">
+          <p class="sub2 activator grey-text text-darken-4"><%= post.title %></p>
+          <p class="grey-text"><%= post.category.title %></p>
+          <p class="grey-text"><%= post.city.description %></p>
+        </div>
+         
+      </div> 
+      <% end %>     
+    </div>
+    <% end %>

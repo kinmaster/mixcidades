@@ -1,4 +1,3 @@
-
 <% @classifields.each do |post| %>
     <div class="col s12 m12 l3">   
     <%= link_to post do %> 
@@ -9,8 +8,9 @@
         <div class="card-content">
           <p class="sub2 activator green-text text-darken-4">R$ <%= post.value %></p>
           <span class="sub2 activator grey-text text-darken-4"><%= post.title %></span>
-        </div> 
+        </div>
+         
       </div> 
       <% end %>     
     </div>
-<% end %> 
+    <% end %>

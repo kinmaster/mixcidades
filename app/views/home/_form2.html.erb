@@ -8,11 +8,9 @@
           <%= image_tag(post.avatar_url) %>  
         </div> 
         <div class="card-content">
+        <p class="green-text text-darken-2"><%= post.category.title%> </p>
           <span class="sub2 activator grey-text text-darken-4"><%= post.title %></span>
-        </div>
-        <div class="card-action">
-         <span class="green-text text-darken-2"><%= post.category.title%> </span> - 
-         <span class="green-text text-darken-2"> <%= time_ago_in_words(post.created_at) %></span>
+        <p class="green-text text-darken-2"> <%= time_ago_in_words(post.created_at) %></p>
         </div> 
       </div> 
       <% end %>     
