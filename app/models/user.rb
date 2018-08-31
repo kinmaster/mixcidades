@@ -13,5 +13,5 @@ class User < ApplicationRecord
   def crop_avatar
     avatar.recreate_versions! if crop_x.present?
   end
-  belongs_to :city
+  has_one :city
 end
