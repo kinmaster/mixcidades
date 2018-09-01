@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="header blue-text text-darken-4">Concursos </h1>
+<div class="divider blue darken-4"></div>
+<div class="row">
+<% @contests.each do |cot| %>
+  <div class="col s12 m6 l3">  
+  <%= link_to cot do %> 
+      <div class="card small">
+        <div class="card-image image">
+          <%= image_tag(cot.avatar_url) %>  
+        </div> 
+        <div class="card-content">
+        
+          <span class="sub2 activator grey-text text-darken-4"><%= cot.title %></span>
+          <p class="red-text text-darken-2 sub2">Prova em <%= cot.date.to_formatted_s(:short) %> </p>
+          <p class="grey-text text-darken-2"><%= cot.city.description %> </p>
+          <span class="grey-text text-darken-2"> <%= time_ago_in_words(cot.created_at) %></span>
+        </div>
+         
+      </div> 
+      <% end %>  
+  </div>
+  <% end %>
+</div>
+
+ 
+
+

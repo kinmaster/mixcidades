@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+<div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :job_title %>
+  </div>
+  
   <div class="field">
     <%= form.label :sector_id %>
      <%= form.select :sector_id, Sector.all.collect { |p| [p.title, p.id] }, include_blank: true, class: "" %>
@@ -31,10 +36,12 @@
     <%= form.text_field :email, id: :job_email %>
   </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :job_title %>
+   <div class="field">
+    <%= form.label :city_id %>
+    <%= form.select :city_id, City.all.collect { |p| [p.description, p.id] }, include_blank: true, class: "" %>
   </div>
+
+  
   <div class="field">
     <%= form.label :salary_id %>
     <%= form.select :salary_id, Salary.all.collect { |p| [p.value, p.id] }, include_blank: false, class: "" %>

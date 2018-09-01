@@ -1,0 +1,19 @@
+ <% @contests.each do |post| %>
+    <div class="col s12 m12 l4">   
+    <%= link_to post do %> 
+      <div class="card small">
+        <div class="card-image image">
+          <%= image_tag(post.avatar_url) %>  
+        </div> 
+
+        <div class="card-content">
+          <span class="sub2 activator grey-text text-darken-4"><%= post.title %></span>
+          <p class="red-text text-darken-2 sub2">Prova em <%= post.date.to_formatted_s(:short) %> </p>
+          <p class="grey-text text-darken-2"><%= post.city.description %> </p>
+          <span class="grey-text text-darken-2"> <%= time_ago_in_words(post.created_at) %></span>
+        </div>
+         
+      </div> 
+      <% end %>     
+    </div>
+    <% end %>

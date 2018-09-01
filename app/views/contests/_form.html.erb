@@ -1,0 +1,62 @@
+<%= form_with(model: contest, local: true) do |form| %>
+  <% if contest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contest.errors.count, "error") %> prohibited this contest from being saved:</h2>
+
+      <ul>
+      <% contest.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="file-field input-field">
+  <div class="btn">
+    <span>Imagem</span>
+    <%= form.file_field :avatar, class: "" %>
+  </div>
+   <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+  </div>
+</div>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :contest_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sub %>
+    <%= form.text_field :sub, id: :contest_sub %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_field :date, id: :contest_date %>
+  </div>
+
+   <div class="field">
+    <%= form.label :city_id %>
+    <%= form.select :city_id, City.all.collect { |p| [p.description, p.id] }, include_blank: true, class: "" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.cktext_area :body, id: :contest_body %>
+  </div>
+
+  <div class="field">
+  <div class="switch">
+  <%= form.label :role %>
+    <label>
+      Off
+      <%= form.check_box :role %>
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+ </div>
+
+  <div class="actions">
+    <%= form.submit "Publicar", class: 'btn' %>
+  </div>
+<% end %>

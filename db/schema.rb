@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180831193914) do
+ActiveRecord::Schema.define(version: 20180901210317) do
 
   create_table "capacities", force: :cascade do |t|
     t.integer "user_id"
@@ -91,6 +91,22 @@ ActiveRecord::Schema.define(version: 20180831193914) do
     t.index ["user_id"], name: "index_commercials_on_user_id"
   end
 
+  create_table "contests", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.string "sub"
+    t.date "date"
+    t.text "body"
+    t.integer "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "city_id"
+    t.string "avatar"
+    t.string "slug"
+    t.index ["city_id"], name: "index_contests_on_city_id"
+    t.index ["user_id"], name: "index_contests_on_user_id"
+  end
+
   create_table "event_attachments", force: :cascade do |t|
     t.integer "event_id"
     t.string "avatar"
@@ -145,6 +161,9 @@ ActiveRecord::Schema.define(version: 20180831193914) do
     t.datetime "updated_at", null: false
     t.text "benefits"
     t.text "requirements"
+    t.string "slug"
+    t.integer "city_id"
+    t.index ["city_id"], name: "index_jobs_on_city_id"
   end
 
   create_table "posts", force: :cascade do |t|

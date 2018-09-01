@@ -1,9 +1,7 @@
-class Job < ApplicationRecord
+class Contest < ApplicationRecord
   belongs_to :user
-  belongs_to :sector
-  belongs_to :capacity
-  belongs_to :salary
   belongs_to :city
+  mount_uploader :avatar, AvatarUploader
 
   extend FriendlyId
   friendly_id :title, use: :slugged

@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<div class="section">
+
+  <div class="row">
+      <div class="col s12 m12 l6">
+        <div class="col l12">
+          <%= image_tag(@contest.avatar_url, class:"", width: "50%")%>
+        </div>
+      </div>
+      <div class="col s12 l6">
+        <div class="col l12">
+         <blockquote class="left">
+              <h6 class="bold">Por <%= @contest.user.name%></h6>
+              <p>Atualizado em <%= time_ago_in_words(@contest.updated_at) %></p>
+
+          </blockquote>
+        </div>
+      </div>
+      <div class="divider"></div>
+        <div class="col s12 l12">
+        <h4 class="header"><%= @contest.title %></h4>
+          <p class="bold sub2">Data da Prova</p>
+              <h5 class="red-text"><%= @contest.date.to_formatted_s(:short) %></h5>   
+            <p class="bold sub2">Local da Prova</p>
+            <p class="bold">Cidade de <%= @contest.city.description%></p>
+            <p class="bold sub2">Informações do Concurso</p>
+            <div class="conteudo">
+              <p class="bold"><%= @contest.body.html_safe%></p>
+            </div>
+        </div>
+  </div>
+</div>       
+<!-- LOMADEE - BEGIN -->
+<script src="//ad.lomadee.com/banners/script.js?sourceId=35984927&dimension=1&height=90&width=728&method=1&advertisers=5876,5772,11,6172,5760" type="text/javascript" language="javascript"></script>
+<!-- LOMADEE - END -->
+<div class="divider"></div>
+      <div class="row">
+        <h5 class="header">Veja Também</h5>
+        <% @contests.each do |post| %>    
+            <div class="col s12 m12 l4">   
+              <%= link_to post do %> 
+                <div class="card small">
+                  <div class="card-image image">
+                    <%= image_tag(post.avatar_url) %>  
+                  </div> 
+                  <div class="card-content">
+                  <span class="sub2 activator grey-text text-darken-4"><%= post.title %></span>
+          <p class="red-text text-darken-2 sub2">Prova em <%= post.date.to_formatted_s(:short) %> </p>
+          <p class="grey-text text-darken-2"><%= post.city.description %> </p>
+          <span class="grey-text text-darken-2"> <%= time_ago_in_words(post.created_at) %></span>
+                  </div> 
+                </div> 
+              <% end %>     
+            </div>
+        <% end %>
+      </div>
+  
+
+<%= link_to 'Voltar', contests_path, class: ' volta waves-effect waves-light btn white-text blue' %>

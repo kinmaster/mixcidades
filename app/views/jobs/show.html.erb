@@ -12,7 +12,7 @@
         <div class="col l12">
          <blockquote class="left">
               <h6 class="bold">Empresa <%= @job.user.name%></h6>
-              <p class="bold">Cidade de maringa-PR</p>
+              <p class="bold">Cidade de <%= @job.city.description%></p>
               <p class="bold">Contato <%= @job.phone%></p>
               <p class="bold">E-mail <%= @job.email%></p>
               <p>Atualizado em <%= time_ago_in_words(@job.created_at) %></p>
@@ -36,6 +36,9 @@
         </div>
   </div>
 </div>       
+<!-- LOMADEE - BEGIN -->
+<script src="//ad.lomadee.com/banners/script.js?sourceId=35984927&dimension=1&height=90&width=728&method=1&advertisers=5876,5772,11,6172,5760" type="text/javascript" language="javascript"></script>
+<!-- LOMADEE - END -->
 <div class="divider"></div>
       <div class="row">
         <h5 class="header">Veja Também</h5>

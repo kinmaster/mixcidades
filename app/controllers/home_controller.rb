@@ -7,5 +7,6 @@ class HomeController < ApplicationController
     @classifields = Classifield.last(6)
     @jobs = Job.last(8)
     @commercials = Commercial.where(role: 1)
+    @contests = Contest.last(8)
   end
 end
