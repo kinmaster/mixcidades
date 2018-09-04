@@ -48,7 +48,17 @@
      </div>
     <% end %>
     
-
+<div class="field">
+  <div class="switch">
+  <%= form.label :role %>
+    <label>
+      Off
+      <%= form.check_box :role %>
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+ </div>
 
   <div class="actions">
     <%= form.submit'Publicar', class: "btn" %>

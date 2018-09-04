@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180901210317) do
+ActiveRecord::Schema.define(version: 20180904014813) do
 
   create_table "capacities", force: :cascade do |t|
     t.integer "user_id"
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20180901210317) do
     t.string "address"
     t.integer "city_id"
     t.string "slug"
+    t.integer "role"
     t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
