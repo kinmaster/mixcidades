@@ -29,13 +29,14 @@
       <h4 class="header"><%= @classifield.title %></h4>
       <h3 class="header">R$ <%= @classifield.value %></h3>
         <div class="col l12">
+        
          <blockquote class="left">
               <p class="bold">Vendedor <%= @classifield.user.name%></p>
               <p class="bold"> <%= @classifield.city.description%></p>
               <p class="bold">Contato <%= @classifield.phone%></p>
               <p>Atualizado em <%= time_ago_in_words(@classifield.created_at) %></p>
 
-          </blockquote>
+          </blockquote> 
         </div>
       </div>
       <div class="divider"></div>
@@ -45,6 +46,7 @@
         </div>
   </div>
 </div>       
+  
 <div class="divider"></div>
       <div class="row">
         <h5 class="header">Veja Também</h5>

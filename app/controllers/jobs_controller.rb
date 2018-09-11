@@ -1,8 +1,7 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, :only => [:index, :show]
-  
-
+  load_and_authorize_resource
   # GET /jobs
   # GET /jobs.json
   def index
@@ -59,7 +58,7 @@ class JobsController < ApplicationController
   def destroy
     @job.destroy
     respond_to do |format|
-      format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
+      format.html { redirect_to @job, notice: 'Job was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

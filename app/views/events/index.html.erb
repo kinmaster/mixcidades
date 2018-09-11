@@ -23,13 +23,19 @@
             <div class="col m9">
               <p class="red-text"><%= event.address %></p>
               <p class="red-text"><%= event.city.description %></p>    
-            </div>     
+            </div>  
         </div>
       </div>
+       <% if can? :destroy, Event %>
+            <p><%= link_to 'Editar', edit_event_path(event), class: "btn blue darken-2 white-text" %><%= link_to 'Excluir', event, class: "btn red darken-2 white-text", method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% end %>
     <% end %>
     </div>
   
 
   <% end %>
 </div>
+ <% if can? :create, Event %>
+      <%= link_to 'Novo Evento', new_event_path, class: "btn btn-lg blue darken-2 white-text" %>
+    <% end %>
 

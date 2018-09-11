@@ -1,6 +1,7 @@
 class ClassifieldsController < ApplicationController
   before_action :set_classifield, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, :only => [:index, :show]
+  load_and_authorize_resource
   # GET /classifields
   # GET /classifields.json
   def index
@@ -57,7 +58,7 @@ class ClassifieldsController < ApplicationController
   def destroy
     @classifield.destroy
     respond_to do |format|
-      format.html { redirect_to classifields_url, notice: 'Classifield was successfully destroyed.' }
+      format.html { redirect_to @classifield, notice: 'Classifield was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

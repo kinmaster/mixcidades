@@ -2,7 +2,7 @@ class Event < ApplicationRecord
     belongs_to :city
     mount_uploader :avatar, AvatarUploader
     
-    has_many :event_attachments
+    has_many :event_attachments, dependent: :destroy
     accepts_nested_attributes_for :event_attachments
     
     extend FriendlyId

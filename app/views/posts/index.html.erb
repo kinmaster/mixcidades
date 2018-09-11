@@ -1,13 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-
-
+<div class="row">
+  <div class="col l10">
     <% if (@posts.first.category.id == 3)%>
     <h1 class="header green-text text-darken-2">Esporte</h1>
     <% else %>
       <h1 class="header red-text text-darken-2">Notícias</h1>
     <% end %>
-    
+  </div>
+  <div class="col l2">
+    <% if can? :create, Post %>
+      <%= link_to 'Postar', new_post_path, class: "btn" %>
+    <% end %>
+  </div> 
+</div>
     <div class="divider"></div>
 <div class="row">
 <%= @paramss %> 
@@ -25,12 +31,13 @@
         <div class="card-action">
          <span class="red-text text-darken-2"><%= post.category.title%> </span> - 
          <span class="red-text text-darken-2"> <%= time_ago_in_words(post.created_at) %></span>
-          <% if user_signed_in? %>
-            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
+          
         </div> 
       </div> 
-      <% end %>     
+      <% end %> 
+          <% if can? :destroy, Post %>
+            <p><%= link_to 'Editar', edit_post_path(post), class: "btn blue darken-2 white-text" %><%= link_to 'Excluir', post, class: "btn red darken-2 white-text", method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% end %>    
     </div>
   <% end %> 
 </div>

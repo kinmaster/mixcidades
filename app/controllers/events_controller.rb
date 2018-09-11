@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, :only => [:index, :show]
-
+  load_and_authorize_resource
   # GET /events
   # GET /events.json
   def index
@@ -66,7 +66,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to authenticated_root_index_path, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

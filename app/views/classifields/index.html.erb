@@ -1,7 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h3 class="header orange-text text-darken-2">Classifields</h3>
-<div class="divider"> </div>
+
+<div class="row">
+  <div class="col l10">
+    <h3 class="header orange-text text-darken-2">Classifields</h3>
+  </div>
+  <div class="col l2">
+    <% if can? :create, Classifield %>
+      <%= link_to 'Anuncie', new_classifield_path, class: "btn btn-lg orange darken-2 white-text" %>
+    <% end %>
+  </div> 
+</div>
+<div class="divider orange"> </div>
 <div class="row">
      <% @classifields.each do |post| %>
     <div class="col s12 m12 l4">   

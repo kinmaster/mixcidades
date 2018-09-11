@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180904014813) do
+ActiveRecord::Schema.define(version: 20180908143753) do
 
   create_table "capacities", force: :cascade do |t|
     t.integer "user_id"
@@ -215,6 +215,10 @@ ActiveRecord::Schema.define(version: 20180904014813) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.integer "city_id"
+    t.boolean "admin"
+    t.boolean "superadmin_role", default: false
+    t.boolean "supervisor_role", default: false
+    t.boolean "user_role", default: false
     t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["email"], name: "index_users_on_email"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

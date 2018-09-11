@@ -1,6 +1,7 @@
 class CommercialsController < ApplicationController
   before_action :set_commercial, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, :only => [:index, :show]
+  load_and_authorize_resource
   # GET /commercials
   # GET /commercials.json
   def index
