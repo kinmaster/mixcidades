@@ -6,7 +6,7 @@
     <h1 class="header blue-text text-darken-2">Empregos</h1>
   </div>
   <div class="col l3">
-    <% if can? :create, Classifield %>
+    <% if can? :create, Job %>
       <%= link_to 'Anuncie Grátis', new_job_path, class: "btn btn-lg blue darken-2 white-text" %>
     <% end %>
   </div> 
