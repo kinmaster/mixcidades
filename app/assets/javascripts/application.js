@@ -14,6 +14,7 @@
 //= require rails-ujs	
 //= require jcrop
 //= require turbolinks
+//= require activestorage
 //= require materialize-sprockets
 //= require ckeditor/init
 //= require_tree .

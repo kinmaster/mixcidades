@@ -1,4 +1,4 @@
-<%= form_with(model: post, local: true) do |form| %>
+<%= form_with(model: post, local: true, multipart: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -10,11 +10,12 @@
       </ul>
     </div>
   <% end %>
+  
 
  <div class="file-field input-field">
   <div class="btn">
     <span>Imagem</span>
-    <%= form.file_field :avatar, class: "" %>
+    <%= form.file_field :image, class: "" %>
   </div>
    <div class="file-path-wrapper">
         <input class="file-path validate" type="text" placeholder="Upload one or more files">

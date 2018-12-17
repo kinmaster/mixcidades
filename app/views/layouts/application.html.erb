@@ -41,7 +41,7 @@
               <% if user_signed_in? %>
                 <li>
                 <%= link_to user_path(current_user.id), class: 'navbar-link' do  %>
-                  <%= image_tag current_user.avatar_url, class: "avatar" %>
+                  <%= image_tag current_user.image, class: "avatar" %>
                 <% end %>
                 </li> 
               <% else %>

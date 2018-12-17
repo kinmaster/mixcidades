@@ -11,18 +11,18 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @event_attachments = @event.event_attachments.all
+    #@event_attachments = @event.event_attachments.all
   end
 
   # GET /events/new
   def new
     @event = Event.new
-    @event_attachment = @event.event_attachments.build
+    #@event_attachment = @event.event_attachments.build
   end
 
   # GET /events/1/edit
   def edit
-    @event_attachments = @event.event_attachments.all
+    #@event_attachments = @event.event_attachments.all
   end
 
   # POST /events
@@ -32,9 +32,6 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        params[:event_attachments]['avatar'].each do |a|
-          @post_attachment = @event.event_attachments.create!(:avatar => a, :event_id => @event.id)
-       end
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
@@ -49,9 +46,6 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-          params[:event_attachments]['avatar'].each do |a|
-           @post_attachment = @event.event_attachments.create!(:avatar => a, :event_id => @event.id)
-          end
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
@@ -79,7 +73,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :body, :date, :city_id, :address, :role, :avatar, event_attachments_attributes: 
-      [:id, :post_id, :avatar])
+      params.require(:event).permit(:title, :body, :date, :city_id, :address, :role, :image, images: [])
     end
 end

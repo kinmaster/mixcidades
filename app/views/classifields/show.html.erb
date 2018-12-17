@@ -6,22 +6,11 @@
       <div class="col s12 m12 l6">
       <div class="slider">
     <ul class="slides">
+    <% @classifield.images.each do |image| %>    
       <li>
-        <%= image_tag(@classifield.avatar_url, class:"imagem")%>
-        
+          <%= image_tag image, class:"materialboxed imagem" %> 
       </li>
-      <li>
-        <%= image_tag(@classifield.avatar_url, class:"imagem")%>
-        
-      </li>
-      <li>
-        <%= image_tag(@classifield.avatar_url, class:"imagem")%>
-        
-      </li>
-      <li>
-        <%= image_tag(@classifield.avatar_url, class:"imagem")%>
-        
-      </li>
+      <% end %>
     </ul>
   </div>
       </div> 
@@ -55,7 +44,7 @@
               <%= link_to post do %> 
                 <div class="card small">
                   <div class="card-image image">
-                    <%= image_tag(post.avatar_url) %>  
+                    <%= image_tag post.images[0] %>  
                   </div> 
                   <div class="card-content">
                   <p class="sub2 activator green-text text-darken-4">R$ <%= post.value %></p>

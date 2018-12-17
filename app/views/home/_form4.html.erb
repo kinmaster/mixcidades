@@ -3,7 +3,7 @@
   <%= link_to job do %> 
       <div class="card small">
         <div class="card-image image">
-          <%= image_tag(job.user.avatar_url) %>  
+        <%= image_tag job.user.image %> 
         </div> 
         <div class="card-content">
           <span class="sub2 activator grey-text text-darken-4"><%= job.title %></span>

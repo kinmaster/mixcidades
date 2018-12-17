@@ -71,6 +71,6 @@ class ClassifieldsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def classifield_params
-      params.require(:classifield).permit(:user_id, :title, :description, :value, :date, :sale, :avatar, :city_id, :phone)
+      params.require(:classifield).permit(:user_id, :title, :description, :value, :date, :sale, :city_id, :phone, images: [])
     end
 end

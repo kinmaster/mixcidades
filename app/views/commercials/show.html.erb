@@ -8,25 +8,14 @@
       <div class="col s12 m12 l6">
       <div class="slider">
     <ul class="slides">
+    <% @commercial.images.each do |image| %>    
       <li>
-        <%= image_tag(@commercial.avatar_url, class:"imagem")%>
-        
+          <%= image_tag image, class:"materialboxed imagem" %> 
       </li>
-      <li>
-        <%= image_tag(@commercial.avatar_url, class:"imagem")%>
-        
-      </li>
-      <li>
-        <%= image_tag(@commercial.avatar_url, class:"imagem")%>
-        
-      </li>
-      <li>
-        <%= image_tag(@commercial.avatar_url, class:"imagem")%>
-        
-      </li>
+      <% end %>
     </ul>
   </div>
-      </div> 
+  </div> 
       <div class="col s12 l6">
       <h1 class="header"><%= @commercial.title %></h1>
       <h4 class="header"><%= @commercial.city.description%> </h4>
@@ -55,7 +44,7 @@
               <%= link_to post do %> 
                 <div class="card small">
                   <div class="card-image image">
-                    <%= image_tag(post.avatar_url) %>  
+                    <%= image_tag post.images[0] %>  
                   </div> 
                   <div class="card-content">
                     <p class="sub2 activator grey-text text-darken-4"><%= post.title %></p>

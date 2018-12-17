@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  #get 'file_uploads/new'
+  resources :posts do
+    resources :file_uploads, only: [:new, :create, :destroy]
+  end
   resources :contests
   resources :imagems
   resources :commercials
@@ -24,6 +28,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :categories
   resources :users
-  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,9 +1,9 @@
 # encoding: utf-8
-require 'carrierwave'
+#require 'carrierwave'
 
-class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base
-  include Ckeditor::Backend::CarrierWave
-  include Cloudinary::CarrierWave
+class CkeditorAttachmentFileUploader < Base
+  #include Ckeditor::Backend::CarrierWave
+  #include Cloudinary::CarrierWave
 
   # Include RMagick or ImageScience support:
   # include CarrierWave::RMagick

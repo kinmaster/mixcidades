@@ -71,6 +71,6 @@ class ContestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contest_params
-      params.require(:contest).permit(:user_id, :title, :sub, :date, :body, :role, :city_id, :avatar)
+      params.require(:contest).permit(:user_id, :title, :sub, :date, :body, :role, :city_id, :image)
     end
 end

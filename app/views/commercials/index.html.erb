@@ -8,9 +8,8 @@
     <%= link_to post do %> 
       <div class="card small">
         <div class="card-image image">
-          <%= image_tag(post.avatar_url) %>  
-        </div> 
-
+          <%= image_tag post.images[0] %>  
+        </div>
         <div class="card-content">
           <p class="sub2 activator grey-text text-darken-4"><%= post.title %></p>
           <p class="grey-text"><%= post.category.title %></p>

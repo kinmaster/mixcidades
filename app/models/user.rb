@@ -6,7 +6,7 @@ class User < ApplicationRecord
     extend FriendlyId
   friendly_id :name, use: :slugged
 
-  mount_uploader :avatar, AvatarUploader
+  
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :crop_avatar
   
@@ -14,4 +14,5 @@ class User < ApplicationRecord
     avatar.recreate_versions! if crop_x.present?
   end
   has_one :city
+  has_one_attached :image
 end

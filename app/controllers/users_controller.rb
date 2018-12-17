@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        if params[:user][:avatar].present?
+        if params[:user][:image].present?
           render :crop
         else
           format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -95,6 +95,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name,:admin, :function, :city_id, :avatar, :email, :password, :logo_crop_x, :logo_crop_y, :logo_crop_w, :logo_crop_h)
+      params.require(:user).permit(:name,:admin, :function, :city_id, :image, :email, :password, :logo_crop_x, :logo_crop_y, :logo_crop_w, :logo_crop_h)
     end
 end

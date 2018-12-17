@@ -15,7 +15,7 @@
         </blockquote>
 
         <div class="conteudo col s12 m12 l10 offset-l1">
-          <%= image_tag(@post.avatar_url, class:"imagem")%>
+            <%= image_tag @post.image %>
           <p class=""><%= @post.body.html_safe %></p>
         </div>
       </div>
@@ -32,7 +32,7 @@
               <%= link_to post do %> 
                 <div class="card small">
                   <div class="card-image image">
-                    <%= image_tag(post.avatar_url) %>  
+                  <%= image_tag post.image %>
                   </div> 
                   <div class="card-content">
                     <p class="sub2 grey-text text-darken-4 card-sub"><%= post.title %></p>

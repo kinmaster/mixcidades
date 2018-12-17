@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="col s12 m4 l4">
-  <%= image_tag (@event.avatar_url),width:"100%" %>
+  <%= image_tag (@event.image),width:"100%" %>
 </div>
 <div class="row">
             <div class="col m10 l11">
@@ -26,10 +26,9 @@
   <h5 class="header">Galeria de Fotos</h5>
 </div>
       <div class="row">
-    <% @event_attachments.each do |event_attachment| %>
-     
+      <% @event.images.each do |image| %>    
         <div class="col m3 s12">
-            <%= image_tag (event_attachment.avatar_url), class:"materialboxed", width:"100%" %>
+            <%= image_tag image, class:"materialboxed", width:"100%" %>
             <br>
         </div>
       <% end %>

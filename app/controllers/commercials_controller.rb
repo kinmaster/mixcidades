@@ -73,6 +73,6 @@ class CommercialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def commercial_params
-      params.require(:commercial).permit(:user_id, :address, :avatar, :city_id, :phone, :category_id, :description, :title, :role)
+      params.require(:commercial).permit(:user_id, :address, :city_id, :phone, :category_id, :description, :title, :role, images: [])
     end
 end

@@ -5,7 +5,7 @@
   <div class="row">
       <div class="col s12 m12 l6">
         <div class="col l12">
-          <%= image_tag(@contest.avatar_url, class:"", width: "50%")%>
+          <%= image_tag(@contest.image, class:"", width: "50%")%>
         </div>
       </div>
       <div class="col s12 l6">
@@ -42,7 +42,7 @@
               <%= link_to post do %> 
                 <div class="card small">
                   <div class="card-image image">
-                    <%= image_tag(post.avatar_url) %>  
+                    <%= image_tag post.image %>  
                   </div> 
                   <div class="card-content">
                   <span class="sub2 activator grey-text text-darken-4"><%= post.title %></span>

@@ -7,10 +7,11 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.6'
+gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
-gem 'pg'
-
+#gem 'pg'
+gem 'bootsnap'
+gem 'aws-sdk-s3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -21,12 +22,12 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'materialize-sass'
 gem 'material_icons'
 gem 'ckeditor'
-gem 'carrierwave'
-gem 'mini_magick'
-gem 'cloudinary'
+#gem 'carrierwave'
+#gem 'mini_magick'
+#gem 'cloudinary'
 gem 'devise'
 gem 'cancancan'
-gem 'rmagick'
+#gem 'rmagick'
 gem 'rails-assets-jcrop', source: 'https://rails-assets.org'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
