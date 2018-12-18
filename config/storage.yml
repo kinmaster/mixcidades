@@ -18,7 +18,7 @@ amazon:
   access_key_id: AKIAJFZPVWE22WMBM2AA
   secret_access_key: 06bdNEaEpv6r20uWWzcWLx/RUqOHdU9dhbpq34Xl
   region: us-east-2
-  bucket: mix-cidades
+
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
