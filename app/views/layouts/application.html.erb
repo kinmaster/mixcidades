@@ -41,7 +41,11 @@
               <% if user_signed_in? %>
                 <li>
                 <%= link_to user_path(current_user.id), class: 'navbar-link' do  %>
-                  <%= image_tag current_user.image, class: "avatar" %>
+                  <% if current_user.image.attached? %>
+                          <%= image_tag current_user.image, class: "avatar" %>
+                <% else %>
+                  <%= image_tag 'default.jpg', class: "avatar" %>
+                  <% end %> 
                 <% end %>
                 </li> 
               <% else %>

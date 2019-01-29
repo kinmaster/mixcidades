@@ -15,4 +15,12 @@ class User < ApplicationRecord
   end
   has_one :city
   has_one_attached :image
+
+  #def image_nil
+   # if !self.image?
+    #    user.image.attach(io: File.open('/path/to/file'), filename: 'default.jpg', content_type: 'image/jpeg')
+    #end
+  #end
+
+
 end
